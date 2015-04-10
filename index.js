@@ -82,7 +82,7 @@ CoveragePlugin.prototype.parseLogs = function(config) {
 
 	    });
 
-	    console.log('Events in log: ', count);
+	    // console.log('Events in log: ', count);
 		});
 	}
 };
@@ -210,12 +210,12 @@ CoveragePlugin.prototype.postResults = function(config) {
 
   var seen = 0;
   self.DOMelements.forEach(function(elem) {
-    console.log(elem.hash, ' ', elem.seen, ' ', elem.events);
+    // console.log(elem.hash, ' ', elem.seen, ' ', elem.events);
     if(elem.seen) seen += 1;
   });
 
-  console.log('Number of elements ', self.DOMelements.length);
-  console.log('Number of elements interacted', seen);
+  // console.log('Number of elements ', self.DOMelements.length);
+  // console.log('Number of elements interacted', seen);
   self.outputResults(deferred.resolve)
 
 	return deferred.promise;
