@@ -8,15 +8,14 @@
 	        var url = "coverage.json";
 
 	        xmlhttp.onreadystatechange = function() {
-	        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-	            var data = JSON.parse(xmlhttp.responseText);
-	            console.log(data);
-	            data.forEach(function(item) {
-	            	document.body.innerHTML += template(item);
-
-	            })
-	          }
-	        }
+		        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		            var data = JSON.parse(xmlhttp.responseText);
+		            console.log(data);
+		            data.forEach(function(item) {
+		            	document.body.innerHTML += template(item);
+		            });
+		        } 
+		    }
 
 	        function safe_tags(str) {
 			    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
