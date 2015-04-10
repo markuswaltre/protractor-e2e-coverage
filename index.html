@@ -1,0 +1,53 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+	        var xmlhttp = new XMLHttpRequest();
+	        var url = "coverage.json";
+
+	        xmlhttp.onreadystatechange = function() {
+	        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	            var data = JSON.parse(xmlhttp.responseText);
+	            console.log(data);
+	            data.forEach(function(item) {
+	            	document.body.innerHTML += template(item);
+
+	            })
+	          }
+	        }
+
+	        function safe_tags(str) {
+			    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
+			}
+
+	        function template(element) {
+	        	var html = '';
+	        	html += '<div>'
+	        	html += '<p>'
+	        	html += '<span style="color:' + (element.seen ? '#10FF00' : 'red') + ';">'
+	        	html += 'Seen: ' + element.seen
+	        	html += '</span>'
+	        	html += 'Type: ' + element.type
+	        	html += '</p>'
+	        	html += '<small>'
+	        	html += 'Hash: ' + element.hash
+	        	html += '</small>'
+	        	html += '<pre style="white-space:pre-wrap">'
+	        	html += safe_tags(element.element)
+	        	html += '</pre>'
+	        	html += '<div>'
+	        	html += element.element
+	        	html += '</div>'
+	        	html += '</div>'
+	        	html += '<hr>'
+
+	        	return html;
+	        }
+
+	        xmlhttp.open("GET", url, true);
+	        xmlhttp.send();
+		</script>
+	</body>
+</html>
