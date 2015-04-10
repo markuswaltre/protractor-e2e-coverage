@@ -1,6 +1,6 @@
 {
   "name": "protractor-e2e-coverage",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Protractor plugin for E2E coverage",
   "main": "index.js",
   "scripts": {
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/markuswaltre/protractor-e2e-coverage/issues"
   },
-  "homepage": "https://github.com/markuswaltre/protractor-e2e-coverage"
+  "homepage": "https://github.com/markuswaltre/protractor-e2e-coverage",
+  "devDependencies": {
+    "q": "^1.2.0"
+  }
 }
