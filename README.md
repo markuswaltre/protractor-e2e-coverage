@@ -22,3 +22,7 @@ If coverage in unit is measuring visited logic, then this can be seen as visited
 > What the user sees, the user should be able to interact with
 
 It essentially detects [events](https://developer.mozilla.org/en-US/docs/Web/Events) on **buttons**, **links** and **input**
+
+### Roadmap
+
+* Add states when items where interacted with
