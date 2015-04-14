@@ -26,3 +26,4 @@ It essentially detects [events](https://developer.mozilla.org/en-US/docs/Web/Eve
 ### Roadmap
 
 * Add states when items where interacted with
+* Strip classes for hashing items
