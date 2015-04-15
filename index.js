@@ -57,8 +57,8 @@ CoveragePlugin.prototype.storeElement = function(element, type) {
   if(!exists) {
     var obj = { 
       'hash': h,
-      'hashedelem': DOMelement.replace(/\s\bclass=("[^"]+")/g, ' '),
       'element': DOMelement,
+      'elementHashed': DOMelement.replace(/\s\bclass=("[^"]+")/g, ' '),
       'type': type,
       'tested': false,
       'seen': {
@@ -83,23 +83,17 @@ CoveragePlugin.prototype.parseLogs = function(config) {
 	      return (node.level || {}).name === 'WARNING';
 	    });
 
-	    var count = 0;
 	    warnings.forEach(function(elem) {
 	      var m = JSON.parse(elem.message);
 	      if (m.message.hasOwnProperty('parameters')) { 
 
 	        var p = m.message.parameters;
 
-	        if(p[0].value === 'CoverageE2E') {
-	          count += 1;
-            // console.log(p[2].value);
+	        if(p[0].value === self.name) {
 	          self.updateElement(p[1].value, p[2].value, p[3].value);
 	        }
 	      }
-
 	    });
-
-	    // console.log('Events in log: ', count);
 		});
 	}
 };
@@ -188,9 +182,7 @@ CoveragePlugin.prototype.postTest = function(config) {
 
           // store eventlistener in sessionstorage
           window.sessionStorage.setItem(hash, 'CoverageE2E');    
-          // store element for return to plugin
-    			// TODO strip class=''
-          var location = {};
+
           DOMtype.elements.push({'item': item.outerHTML, 'location': url}); 
         }
       });
@@ -215,6 +207,7 @@ CoveragePlugin.prototype.postTest = function(config) {
 
 CoveragePlugin.prototype.outputResults = function(done) {
 	var self = this;
+
 	try {
     fs.mkdirSync(self.outdir);
   } catch (e) {
@@ -223,7 +216,7 @@ CoveragePlugin.prototype.outputResults = function(done) {
 
   var stream = fs.createReadStream(path.join(__dirname, 'index.html'));
   var outfile = path.join(self.outdir, 'coverage.json');
-  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements), 'utf8');
+  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements));
   stream.pipe(fs.createWriteStream(path.join(this.outdir, 'index.html')));
   stream.on('end', done);
 };
@@ -233,15 +226,6 @@ CoveragePlugin.prototype.postResults = function(config) {
 	var deferred = q.defer();
 
 	self.parseLogs();
-
-  var tested = 0;
-  self.DOMelements.forEach(function(elem) {
-    // console.log(elem.hash, ' ', elem.tested, ' ', elem.events);
-    if(elem.tested) tested += 1;
-  });
-
-  // console.log('Number of elements ', self.DOMelements.length);
-  // console.log('Number of elements interacted', seen);
   self.outputResults(deferred.resolve)
 
 	return deferred.promise;
