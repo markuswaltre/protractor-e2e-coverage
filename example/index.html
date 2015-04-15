@@ -39,7 +39,8 @@
 					<td>Status</td>
 					<td>Type</td>
 					<td>Events</td>
-					<!-- <td>Hash</td> -->
+					<td>Locations triggered</td>
+					<td>Locations seen</td>
 					<td>Html</td>
 					<td>Html safe</td>
 				</tr>
@@ -69,7 +70,7 @@
 			var table = document.getElementById('table');
 			var count = 0;
 			data.forEach(function(item) {
-				if(item.seen) interacted += 1;
+				if(item.tested) interacted += 1;
 				count += 1;
 				table.appendChild(template(item, count));
 			});
@@ -83,19 +84,21 @@
 				// id
 				'<td>' + id + '</td>' + 
 				// status
-				'<td>' + item.seen + '</td>' + 
+				'<td>' + item.tested + '</td>' + 
 				// type
 				'<td>' + item.type + '</td>' +
 				// events
-				'<td>' + item.events + '</td>' +
-				// hash
-				// '<td><small>' + item.hash + '</small></td>' +
+				'<td>' + item.seen.events + '</td>' +
+				// locations seen
+				'<td>' + item.seen.locations + '</td>' +
+				// locations total
+				'<td>' + item.locations + '</td>' +
 				// html 
 				'<td>' + item.element + '</td>' +
 				// html safe
 				'<td>' + safe_tags(item.element) + '</td>';
 			var tr = document.createElement('tr');
-			tr.className = tr.className + (item.seen ? ' success' : ' warning');
+			tr.className = tr.className + (item.tested ? ' success' : ' warning');
 			tr.innerHTML = s;
 			return tr;
 		}

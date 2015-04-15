@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/markuswaltre/protractor-e2e-coverage",
   "dependencies": {
+    "ncp": "^2.0.0",
     "path": "^0.11.14",
     "q": "^1.2.0",
     "underscore": "^1.8.3"
