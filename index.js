@@ -15,20 +15,27 @@ var CoveragePlugin = function() {
 
 CoveragePlugin.prototype.hash = function(elem) {
 	var shasum = crypto.createHash('sha1');
-  shasum.update(elem);
+  // remove html classes for hash
+  // so we don't get duplicate on things like .ng-touched
+  var r = /\s\bclass=("[^"]+")/g;
+  shasum.update(s.replace(r, ' '));
   return shasum.digest('hex');
 }
 
-CoveragePlugin.prototype.updateElement = function(event, obj) {
+CoveragePlugin.prototype.updateElement = function(event, obj, url) {
 	var self = this;	
 
 	var hash = self.hash(obj);
   var elem = self.findElement(hash);
   if(elem) {
-    elem.seen = true;
+    elem.tested = true;
 
-    if(elem.events.indexOf(event) === -1) {
-      elem.events.push(event);
+    if(elem.seen.events.indexOf(event) === -1) {
+      elem.seen.events.push(event);
+    }
+
+    if(elem.seen.locations.indexOf(url) === -1) {
+      elem.seen.locations.push(url);
     }
   }
 }
@@ -42,19 +49,27 @@ CoveragePlugin.prototype.findElement = function(hash) {
 CoveragePlugin.prototype.storeElement = function(element, type) {
 	var self = this;
 
-  var h = self.hash(element);
+  var DOMelement = element.item;
+
+  var h = self.hash(DOMelement);
   var exists = !!self.findElement(h);
 
   if(!exists) {
     var obj = { 
       'hash': h,
-      'element': element,
+      'element': DOMelement,
       'type': type,
-      'seen': false,
-      'events': []
+      'tested': false,
+      'seen': {
+        'events': [],
+        'locations': []
+      },
+      'locations': [element.location]
     }
     
     self.DOMelements.push(obj);
+  } else {
+    self.findElement(h).locations.push(element.location);
   }
 }
 
@@ -76,7 +91,8 @@ CoveragePlugin.prototype.parseLogs = function(config) {
 
 	        if(p[0].value === 'CoverageE2E') {
 	          count += 1;
-	          self.updateElement(p[1].value, p[2].value);
+            console.log(p[2].value);
+	          self.updateElement(p[1].value, p[2].value, p[3].value);
 	        }
 	      }
 
@@ -113,7 +129,14 @@ CoveragePlugin.prototype.postTest = function(config) {
   browser.executeScript_(function() {
     var helper = {
       hashCode: function (s) {
-        return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
+        var clean = helper.cleanElement(s);
+        return clean.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);
+      },
+      cleanElement: function(s) {
+        // remove html classes for hash
+        // so we don't get duplicate on things like .ng-touched
+        var r = /\s\bclass=("[^"]+")/g;
+        return s.replace(r, ' ');
       },
       getNodes: function(type) {
         // return NodeList
@@ -142,12 +165,13 @@ CoveragePlugin.prototype.postTest = function(config) {
       },
     ];
 
+    var url = window.location.pathname;  
 
     DOMcomponents.forEach(function(DOMtype) {
       var DOMitems = helper.getNodes(DOMtype.type);
 
       DOMitems.forEach(function(item) {
-        var hash = helper.hashCode(item.outerHTML);
+        var hash = helper.hashCode(item.outerHTML + url);
 
         // check if eventlistener exists
         if(!window.sessionStorage.getItem(hash)) {
@@ -157,7 +181,7 @@ CoveragePlugin.prototype.postTest = function(config) {
           events.forEach(function(event) {
             item.addEventListener(event, function() {
               // needs to be info to be catched by the browserlogs capture
-              console.info('CoverageE2E', event, item.outerHTML);
+              console.info('CoverageE2E', event, item.outerHTML, window.location.pathname);
             }); 
           });
 
@@ -165,7 +189,8 @@ CoveragePlugin.prototype.postTest = function(config) {
           window.sessionStorage.setItem(hash, 'CoverageE2E');    
           // store element for return to plugin
     			// TODO strip class=''
-          DOMtype.elements.push(item.outerHTML); 
+          var location = {};
+          DOMtype.elements.push({'item': item.outerHTML, 'location': url}); 
         }
       });
     });
@@ -208,10 +233,10 @@ CoveragePlugin.prototype.postResults = function(config) {
 
 	self.parseLogs();
 
-  var seen = 0;
+  var tested = 0;
   self.DOMelements.forEach(function(elem) {
-    // console.log(elem.hash, ' ', elem.seen, ' ', elem.events);
-    if(elem.seen) seen += 1;
+    // console.log(elem.hash, ' ', elem.tested, ' ', elem.events);
+    if(elem.tested) tested += 1;
   });
 
   // console.log('Number of elements ', self.DOMelements.length);
