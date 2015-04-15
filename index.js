@@ -18,7 +18,7 @@ CoveragePlugin.prototype.hash = function(elem) {
   // remove html classes for hash
   // so we don't get duplicate on things like .ng-touched
   var r = /\s\bclass=("[^"]+")/g;
-  shasum.update(s.replace(r, ' '));
+  shasum.update(elem.replace(r, ' '));
   return shasum.digest('hex');
 }
 
@@ -57,6 +57,7 @@ CoveragePlugin.prototype.storeElement = function(element, type) {
   if(!exists) {
     var obj = { 
       'hash': h,
+      'hashedelem': DOMelement.replace(/\s\bclass=("[^"]+")/g, ' '),
       'element': DOMelement,
       'type': type,
       'tested': false,
@@ -91,7 +92,7 @@ CoveragePlugin.prototype.parseLogs = function(config) {
 
 	        if(p[0].value === 'CoverageE2E') {
 	          count += 1;
-            console.log(p[2].value);
+            // console.log(p[2].value);
 	          self.updateElement(p[1].value, p[2].value, p[3].value);
 	        }
 	      }
@@ -222,7 +223,7 @@ CoveragePlugin.prototype.outputResults = function(done) {
 
   var stream = fs.createReadStream(path.join(__dirname, 'index.html'));
   var outfile = path.join(self.outdir, 'coverage.json');
-  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements));
+  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements), 'utf8');
   stream.pipe(fs.createWriteStream(path.join(this.outdir, 'index.html')));
   stream.on('end', done);
 };
