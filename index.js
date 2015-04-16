@@ -31,13 +31,21 @@ CoveragePlugin.prototype.updateElement = function(event, obj, url) {
   if(elem) {
     elem.tested = true;
 
-    if(elem.seen.events.indexOf(event) === -1) {
-      elem.seen.events.push(event);
+    if(url in elem.seen) {
+      if(elem.seen[url].indexOf(event) === -1) {
+        elem.seen[url].push(event);
+      }
+    } else {
+      elem.seen[url] = [event];
     }
 
-    if(elem.seen.locations.indexOf(url) === -1) {
-      elem.seen.locations.push(url);
-    }
+    // if(elem.seen.events.indexOf(event) === -1) {
+    //   elem.seen.events.push(event);
+    // }
+
+    // if(elem.seen.locations.indexOf(url) === -1) {
+    //   elem.seen.locations.push(url);
+    // }
   }
 }
 
@@ -62,10 +70,7 @@ CoveragePlugin.prototype.storeElement = function(element, type) {
       'elementHashed': DOMelement.replace(/\s\bclass=("[^"]+")/g, ' '),
       'type': type,
       'tested': false,
-      'seen': {
-        'events': [],
-        'locations': []
-      },
+      'seen': {},
       'locations': [element.location]
     }
     
@@ -209,17 +214,17 @@ CoveragePlugin.prototype.postTest = function(config) {
 CoveragePlugin.prototype.outputResults = function(done) {
 	var self = this;
 
-	// try {
- //    fs.mkdirSync(self.outdir);
- //  } catch (e) {
- //    if (e.code != 'EEXIST') throw e;
- //  }
+	try {
+    fs.mkdirSync(self.outdir);
+  } catch (e) {
+    if (e.code != 'EEXIST') throw e;
+  }
 
- //  var stream = fs.createReadStream(path.join(__dirname, 'index.html'));
- //  var outfile = path.join(self.outdir, 'coverage.json');
- //  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements));
- //  stream.pipe(fs.createWriteStream(path.join(this.outdir, 'index.html')));
-  // stream.on('end', done);
+  var stream = fs.createReadStream(path.join(__dirname, 'index.html'));
+  var outfile = path.join(self.outdir, 'coverage.json');
+  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements));
+  stream.pipe(fs.createWriteStream(path.join(this.outdir, 'index.html')));
+  stream.on('end', done);
 
 
   // test
