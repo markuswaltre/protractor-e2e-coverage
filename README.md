@@ -33,17 +33,14 @@ it's possible to set this up with the following command
 ```
 
 ## Current DOM element and event setup
-DOMelement | Events | | | | |
---- | --- | --- | --- | --- | --- | --- | 
-Button | - | Click | - | - | - | - | - |
-
-
-Button	-	Click	-	-	-	-	-
-Form	-	-	-	-	-	-	Submit
-Input	Input	Click	Invalid	Focus	Blur	Change	-
-Select	-	Click	-	-	-	Change	-
-Textarea	Input	Click	-	Focus	Blur	Change	-
-A	-	Click	-	Focus	Blur	-	-
+| Elements | Events |       |         |       |      |        |        |
+|----------|--------|-------|---------|-------|------|--------|--------|
+| Button   | -      | Click | -       | -     | -    | -      | -      |
+| Form     | -      | -     | -       | -     | -    | -      | Submit |
+| Input    | Input  | Click | Invalid | Focus | Blur | Change | -      |
+| Select   | -      | Click | -       | -     | -    | Change | -      |
+| Textarea | Input  | Click | -       | Focus | Blur | Change | -      |
+| A        | -      | Click | -       | Focus | Blur | -      | -      |
 
 ### What it is
 Runs after your tests to see which elements on the page has been interacted with.
