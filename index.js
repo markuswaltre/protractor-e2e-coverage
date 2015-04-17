@@ -243,8 +243,12 @@ CoveragePlugin.prototype.outputResults = function(done) {
   }
 
   var stream = fs.createReadStream(path.join(__dirname, 'index.html'));
-  var outfile = path.join(self.outdir, 'coverage.json');
-  fs.writeFileSync(outfile, JSON.stringify(self.DOMelements));
+  var outfileCoverage = path.join(self.outdir, 'coverage.json');
+  fs.writeFileSync(outfileCoverage, JSON.stringify(self.DOMelements));
+
+  var outfileConfig = path.join(self.outdir, 'config.json');
+  fs.writeFileSync(outfileConfig, JSON.stringify(self.config.elements));
+
   stream.pipe(fs.createWriteStream(path.join(this.outdir, 'index.html')));
   stream.on('end', done);
 
