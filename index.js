@@ -12,6 +12,40 @@ var CoveragePlugin = function() {
 	this.browserLogAvailable = false;
 	this.name = 'CoverageE2E';
 	this.outdir;
+  this.config = {
+    elements: [
+      {
+        'type': 'button',
+        'events': ['click'],
+        'elements': []
+      },
+      {
+        'type': 'a',
+        'events': ['click', 'blur', 'focus'],
+        'elements': []
+      },
+      {
+        'type': 'form',
+        'events': ['submit'],
+        'elements': []
+      },
+      {
+        'type': 'input',
+        'events': ['input', 'click', 'invalid', 'focus', 'blur', 'change'],
+        'elements': []
+      },
+      {
+        'type': 'select',
+        'events': ['click', 'change'],
+        'elements': []
+      },
+      {
+        'type': 'textarea',
+        'events': ['input', 'click', 'focus', 'blur', 'change'],
+        'elements': []
+      }
+    ]
+  };
 };
 
 CoveragePlugin.prototype.hash = function(elem) {
@@ -118,6 +152,10 @@ CoveragePlugin.prototype.setup = function(config) {
 	var self = this;
 	self.outdir = path.resolve(process.cwd(), config.outdir);
 
+  if(config.elements) {
+    self.config.elements = config.elements;
+  }
+
   browser.manage().logs().getAvailableLogTypes().then(function(res) {
     self.browserLogAvailable = res.indexOf('browser') > -1;
   });
@@ -127,7 +165,7 @@ CoveragePlugin.prototype.postTest = function(config) {
 	var self = this;
 	var deferred = q.defer();
 
-  browser.executeScript_(function() {
+  browser.executeScript(function() {
     var helper = {
       hashCode: function (s) {
         var clean = helper.cleanElement(s);
@@ -147,24 +185,8 @@ CoveragePlugin.prototype.postTest = function(config) {
       }
     }
 
-    // Elements we want to investigate
-    var DOMcomponents = [
-      {
-        'type': 'button',
-        'events': ['click'],
-        'elements': []
-      },
-      {
-        'type': 'a',
-        'events': ['focus', 'click'],
-        'elements': []
-      },
-      {
-        'type': 'input',
-        'events': ['focus', 'blur'],
-        'elements': []
-      },
-    ];
+    // Elements and events we want to investigate
+    var DOMcomponents = arguments[0];
 
     var url = window.location.pathname;  
 
@@ -195,7 +217,7 @@ CoveragePlugin.prototype.postTest = function(config) {
     });
 
     return DOMcomponents;
-  }).then(function(DOMcomponents) {
+  }, self.config.elements).then(function(DOMcomponents) {
 
     DOMcomponents.forEach(function(DOMtype) {
       var elements = DOMtype.elements;
