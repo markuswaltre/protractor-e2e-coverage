@@ -22,7 +22,7 @@ function buildTemplates(data) {
 
   data.forEach(function(item) {
     if(_.isEmpty(item.seen)) {
-      // save not seen
+      var match = _.where(dataUrls, {'url': item.loca}
     } else {
       // save seen
       for (url in item.seen) {
