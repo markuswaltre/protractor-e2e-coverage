@@ -21,7 +21,8 @@ it's possible to set this up with the following command
 ```javascript
   plugins: [
 	{
-      elements: [ // add one for each DOM type
+      elements: [ 
+      	// add one for each DOM type
         {
           'type': 'button',
           'events': ['click'], // array of events to listen to
@@ -29,7 +30,20 @@ it's possible to set this up with the following command
         }
       ]
   }
- ```
+```
+
+## Current DOM element and event setup
+DOMelement | Events | | | | |
+--- | --- | --- | --- | --- | --- | --- | 
+Button | - | Click | - | - | - | - | - |
+
+
+Button	-	Click	-	-	-	-	-
+Form	-	-	-	-	-	-	Submit
+Input	Input	Click	Invalid	Focus	Blur	Change	-
+Select	-	Click	-	-	-	Change	-
+Textarea	Input	Click	-	Focus	Blur	Change	-
+A	-	Click	-	Focus	Blur	-	-
 
 ### What it is
 Runs after your tests to see which elements on the page has been interacted with.
