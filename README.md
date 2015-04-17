@@ -52,7 +52,8 @@ It essentially detects [events](https://developer.mozilla.org/en-US/docs/Web/Eve
 
 ### Roadmap
 
-* Add states when items where interacted with
-* Strip classes for hashing items
-* Options to specify elements and events
+* ~~Add states when items where interacted with~~
+* ~~Strip classes for hashing items~~
+* ~~Options to specify elements and events~~
+* Rebuild structure of JSON
 * Report
