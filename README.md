@@ -32,7 +32,7 @@ it's possible to set this up with the following command
   }
 ```
 
-## Current DOM element and event setup
+### Current DOM element and event setup
 | Elements | Events |       |         |       |      |        |        |
 |----------|--------|-------|---------|-------|------|--------|--------|
 | Button   | -      | Click | -       | -     | -    | -      | -      |
