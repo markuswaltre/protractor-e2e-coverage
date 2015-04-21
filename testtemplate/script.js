@@ -14,26 +14,35 @@ function getData() {
 	xmlhttp.send();
 }
 
+function getConfig() {
+
+	var xmlhttp = new XMLHttpRequest();
+	var url = "config.json";
+
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			var config = JSON.parse(xmlhttp.responseText);
+		} 
+	}
+
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+}
+
+getConfig();
 getData();
 
-_.templateSettings.variable = "t";
-
-var title = _.template(
-    $("script.title").html()
-);
-
-$("#container").after(
-	title({'title': "Some title here"})
-);
-
-
 function buildTemplates(data) {
-	var template_item = _.template(
-		$("script.item").html()
+	var t = _.template(
+		$("script#main_template").html()
 	);
 
-	var items = $("#items");
-	data.forEach(function(item) {
-		items.append(template_item(item));
-	});
+	var items = $("#container");
+	items.append(t({states: data}));
 };
+
+function toggleElement(el) {
+	console.log(el);
+	console.log('toggle');
+	$(el).find('ul').toggle();
+}
