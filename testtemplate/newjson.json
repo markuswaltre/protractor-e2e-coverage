@@ -1,0 +1,2834 @@
+[
+  {
+    "url": "\/login",
+    "elements": [
+      {
+        "hash": "f3a177e779bed77161e7879aefa9f812cd6263af",
+        "element": "<button type=\"submit\" class=\"button primary right\" ng-disabled=\"auth.loading\">\n                        <span translate=\"\" class=\"ng-scope\">Logga in<\/span>\n                    <\/button>",
+        "type": "button",
+        "tested": true,
+        "events": [
+          "click"
+        ],
+        "eventsStats": {
+          "unseen": [
+            
+          ],
+          "unseen_global": [
+            
+          ],
+          "seen_global": [
+            "click"
+          ]
+        },
+        "percentage": {
+          "here": 100,
+          "global": 100
+        }
+      },
+      {
+        "hash": "47173a2db7e2438d8deeab202a088824ebf84e6b",
+        "element": "<a ng-click=\"auth.back()\" class=\"button button-outlined right ng-scope\" translate=\"\">G\u00e5 tillbaka<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "ad8931686ba21c3e1958bfa0f341dbee33f1f660",
+        "element": "<a ui-sref=\"auth.register({next: auth.nextParams})\" translate=\"\" class=\"ng-scope\" href=\"\/register\">Klicka h\u00e4r f\u00f6r att g\u00e5 med Competencer!<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2179cebe128048969385ea74f64216ac855f60ce",
+        "element": "<a ui-sref=\"auth.passwordreset\" translate=\"\" class=\"ng-scope\" href=\"\/password\/reset\">Jag har gl\u00f6mt mitt l\u00f6senord<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "15e3e9b5c633f39fcbb17fd5a65bcc14488af95c",
+        "element": "<form ng-submit=\"auth.login()\" class=\"ng-pristine ng-valid-email ng-invalid ng-invalid-required\">\n                    <div class=\"row\">\n                        <div class=\"small-12 columns\">\n                            <label translate=\"\" class=\"ng-scope\">E-mail<\/label>\n                            <input type=\"email\" ng-model=\"auth.user.username\" placeholder=\"E-mail\" required=\"\" autofocus=\"\" class=\"ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required\">\n                        <\/div>\n                    <\/div>\n                    <div class=\"row\">\n                        <div class=\"small-12 columns\">\n                            <label translate=\"\" class=\"ng-scope\">Password<\/label>\n                            <input type=\"password\" ng-model=\"auth.user.password\" placeholder=\"Password\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">\n                        <\/div>\n                    <\/div>\n\n                    <a ui-sref=\"auth.passwordreset\" translate=\"\" class=\"ng-scope\" href=\"\/password\/reset\">Jag har gl\u00f6mt mitt l\u00f6senord<\/a>\n                    <span cmp-spinner=\"\" ng-show=\"auth.loading\" compact=\"true\"><\/span>\n                    <button type=\"submit\" class=\"button primary right\" ng-disabled=\"auth.loading\">\n                        <span translate=\"\" class=\"ng-scope\">Logga in<\/span>\n                    <\/button>\n                <\/form>",
+        "type": "form",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "submit"
+          ],
+          "unseen_global": [
+            "submit"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "b8381123b2ae05fbfc737b6088127939e837f78d",
+        "element": "<input type=\"email\" ng-model=\"auth.user.username\" placeholder=\"E-mail\" required=\"\" autofocus=\"\" class=\"ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required\">",
+        "type": "input",
+        "tested": true,
+        "events": [
+          "focus",
+          "input",
+          "change",
+          "blur"
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "invalid"
+          ],
+          "unseen_global": [
+            "click",
+            "invalid"
+          ],
+          "seen_global": [
+            "input",
+            "focus",
+            "blur",
+            "change"
+          ]
+        },
+        "percentage": {
+          "here": 67,
+          "global": 67
+        }
+      },
+      {
+        "hash": "dd35380fc2867fc350f19ed92c2e9b92c5780acc",
+        "element": "<input type=\"password\" ng-model=\"auth.user.password\" placeholder=\"Password\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">",
+        "type": "input",
+        "tested": true,
+        "events": [
+          "focus",
+          "input",
+          "change",
+          "blur"
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "invalid"
+          ],
+          "unseen_global": [
+            "click",
+            "invalid"
+          ],
+          "seen_global": [
+            "input",
+            "focus",
+            "blur",
+            "change"
+          ]
+        },
+        "percentage": {
+          "here": 67,
+          "global": 67
+        }
+      },
+      {
+        "hash": "d6640c2dd9056ff8a10f1547e1544e062bd203b8",
+        "element": "<form ng-submit=\"auth.login()\" class=\"ng-dirty ng-valid-email ng-valid-parse ng-valid ng-valid-required ng-submitted\">\n                    <div class=\"row\">\n                        <div class=\"small-12 columns\">\n                            <label translate=\"\" class=\"ng-scope\">E-mail<\/label>\n                            <input type=\"email\" ng-model=\"auth.user.username\" placeholder=\"E-mail\" required=\"\" autofocus=\"\" class=\"ng-dirty ng-valid-required ng-valid ng-valid-email ng-touched\">\n                        <\/div>\n                    <\/div>\n                    <div class=\"row\">\n                        <div class=\"small-12 columns\">\n                            <label translate=\"\" class=\"ng-scope\">Password<\/label>\n                            <input type=\"password\" ng-model=\"auth.user.password\" placeholder=\"Password\" required=\"\" class=\"ng-dirty ng-valid-parse ng-valid ng-valid-required ng-animate ng-untouched-remove ng-touched-add ng-touched ng-untouched-remove-active ng-touched-add-active\">\n                        <\/div>\n                    <\/div>\n\n                    <a ui-sref=\"auth.passwordreset\" translate=\"\" class=\"ng-scope\" href=\"\/password\/reset\">Jag har gl\u00f6mt mitt l\u00f6senord<\/a>\n                    <span cmp-spinner=\"\" ng-show=\"auth.loading\" compact=\"true\" class=\"ng-isolate-scope ng-hide\"><div class=\"spinner spinner-compact\" ng-class=\"{'spinner-compact': compact}\">\n    <div class=\"bounce1\"><\/div>\n    <div class=\"bounce2\"><\/div>\n    <div class=\"bounce3\"><\/div>\n<\/div><\/span>\n                    <button type=\"submit\" class=\"button primary right\" ng-disabled=\"auth.loading\">\n                        <span translate=\"\" class=\"ng-scope\">Logga in<\/span>\n                    <\/button>\n                <\/form>",
+        "type": "form",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "submit"
+          ],
+          "unseen_global": [
+            "submit"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      }
+    ],
+    "percentage": {
+      "here": 38,
+      "global": 38
+    },
+    "count": {
+      "seen": 8,
+      "tested": 3,
+      "tested_global": 3
+    }
+  },
+  {
+    "url": "\/bookings",
+    "elements": [
+      {
+        "hash": "2e797c337c2f2de9f0f77b01ce46ba1f66d8745f",
+        "element": "<button class=\"button button-outlined small\" ng-click=\"sendMessage(booking.user)\" cmp-show-advisor=\"\">\n          <i class=\"fa fa-fw fa-envelope-o\"><\/i>\n          <span translate=\"\" class=\"ng-scope\">Skicka meddelande<\/span>\n        <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "dc71877a4c39e2f0883fb97195c883e62c8e5813",
+        "element": "<button class=\"button button-outlined small hide-for-user\" ng-click=\"sendMessage(booking.expert)\" cmp-show-client=\"\">\n          <i class=\"fa fa-fw fa-envelope-o\"><\/i>\n          <span translate=\"\" class=\"ng-scope\">Skicka meddelande<\/span>\n        <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "c0444b46f723fd95e8c75f58c3fd6b770d2062db",
+        "element": "<button class=\"button small button-booking-can_cancel button-outlined\" ng-disabled=\"!transition.can_transition\" ng-class=\"{'button-outlined': transition.transition_name !== 'can_confirm',  'primary': transition.transition_name === 'can_confirm'}\" ng-click=\"bookingTransition(transition.transition_name, booking)\">\n              <i class=\"fa fa-fw fa-close\" ng-class=\"{ 'fa-check': transition.transition_name === 'can_confirm',\n                                        'fa-close': transition.transition_name === 'can_cancel',\n                                        'fa-clock-o': transition.transition_name === 'can_reschedule'}\"><\/i>\n              Avboka\n            <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2260131c1f9da4951fbe0375b735ad95a2b3652e",
+        "element": "<button class=\"button small button-booking-can_reschedule button-outlined\" ng-disabled=\"!transition.can_transition\" ng-class=\"{'button-outlined': transition.transition_name !== 'can_confirm',  'primary': transition.transition_name === 'can_confirm'}\" ng-click=\"bookingTransition(transition.transition_name, booking)\">\n              <i class=\"fa fa-fw fa-clock-o\" ng-class=\"{ 'fa-check': transition.transition_name === 'can_confirm',\n                                        'fa-close': transition.transition_name === 'can_cancel',\n                                        'fa-clock-o': transition.transition_name === 'can_reschedule'}\"><\/i>\n              F\u00f6resl\u00e5 en annan tid\n            <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "1e8132df4d0e8175fb551313ca8fa4350c33cf6d",
+        "element": "<button class=\"button small button-booking-can_confirm primary\" ng-disabled=\"!transition.can_transition\" ng-class=\"{'button-outlined': transition.transition_name !== 'can_confirm',  'primary': transition.transition_name === 'can_confirm'}\" ng-click=\"bookingTransition(transition.transition_name, booking)\">\n              <i class=\"fa fa-fw fa-check\" ng-class=\"{ 'fa-check': transition.transition_name === 'can_confirm',\n                                        'fa-close': transition.transition_name === 'can_cancel',\n                                        'fa-clock-o': transition.transition_name === 'can_reschedule'}\"><\/i>\n              Godk\u00e4nn\n            <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "9284ef4d829ba57c5e6e392533cd1e79c117032b",
+        "element": "<a ui-sref=\"landing\" href=\"\/\">\n              <img src=\"\/images\/landing\/landing-logo-white-beta.png\" alt=\"Competencer\" class=\"logo\">\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "936c72e375050bff565174761ce1f608014536ba",
+        "element": "<a href=\"#\" class=\"ng-scope\"><span translate=\"\" class=\"ng-scope\">Meny<\/span><\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "f5239bf19a6345a68869094dbb3134e4f4ade616",
+        "element": "<a ui-sref=\"landingAdvisor\" translate=\"\" class=\"ng-scope\" href=\"\/advisor\">F\u00f6r r\u00e5dgivare<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "6e3f0f61e079811c644ef9238f047e82e8d9aeb6",
+        "element": "<a ui-sref=\"auth.register\" translate=\"\" class=\"ng-scope\" href=\"\/register\">Registera<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "87279dae772848d0ed906e7db03d2d816c80daed",
+        "element": "<a ui-sref=\"auth.login\" translate=\"\" class=\"ng-scope\" href=\"\/login\">Logga in<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "3de26e6e0ea28f3331dbdca9babe8a927c5e1c35",
+        "element": "<a ui-sref=\"root.mp.list\" translate=\"\" class=\"ng-scope\" href=\"\/mp\/\">Marknadsplats<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "7bf0cd94cba209f04680398a37ede82a294773ff",
+        "element": "<a href=\"#\" class=\"clearfix ng-scope\">\n              <div cmp-user-image=\"\" user=\"vm.currentUser\" size=\"small navbar-image\" class=\"ng-isolate-scope user-img user-img-small navbar-image\" style=\"background-image: url(http:\/\/localhost:3000\/media\/user_pictures\/54f40a478938d7a46b23705449f4a31c_7ciU3nz.jpg);\"><\/div> \n              <span class=\"ng-binding\">Markus<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "52713bd3170fdf1e854a36b20246f90706331bff",
+        "element": "<a href=\"\" ng-click=\"back($event);\" class=\"ng-binding\">Back<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "b888c43755bd424c4fe71f7b3a7238ace4af2ccd",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.general\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/account\">Inst\u00e4llningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "368c062a79bcc84252f78e131d638689cd7a189e",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.payout_settings\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/payments\">Utbetalningsinst\u00e4llningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "9dcb2b424e30dc99e7de41cac58b2e7eeeef1653",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.payouts\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/payouts\">Utbetalningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "b001a4b99466caacabb2ad35b77c1631fab04002",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.transactions\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/transactions\">Transaktioner<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2738b62b39af9689f397d34e3e43fa34dfa719f8",
+        "element": "<a ng-click=\"vm.logout()\" translate=\"\" class=\"ng-scope\">Logga ut<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "6614ac0af504b43e63ab4d2198b01b178379f2b5",
+        "element": "<a ui-sref=\"root.clients.list\" ui-sref-opts=\"{reload: true}\" href=\"\/clients\">\n            <span cmp-show-client=\"\" translate=\"\" class=\"ng-scope hide-for-user\">Mina r\u00e5dgivare<\/span>\n            <span cmp-show-advisor=\"\" translate=\"\" class=\"ng-scope\">Mina klienter<\/span>\n          <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "9279c54175710cae11d05518b4e9ebd1e4e0bcc4",
+        "element": "<a ui-sref=\"root.bookings\" href=\"\/bookings\">\n              <span translate=\"\" class=\"ng-scope\">Bokningar<\/span>\n              <span class=\"label round ng-binding\" ng-show=\"vm.pendingCount\">2<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "dde45a5c8c451b66fc8b41c144555dbcb2c37b5d",
+        "element": "<a ui-sref=\"root.messages\" href=\"\/messages\">\n              <span translate=\"\" class=\"ng-scope\">Meddelanden<\/span>\n              <span class=\"label round ng-binding ng-hide\" ng-show=\"vm.unreadMessageCount\">0<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "fd8cc7d5bb530287a5cf0013247cfccb057ffe1b",
+        "element": "<a ui-sref=\"root.profileEdit.general\" translate=\"\" class=\"ng-scope\" href=\"\/account\/profile\/\">Min Profil<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "7fcd90f3eba62e112ddb7a534eab2766459fe1bd",
+        "element": "<a ui-sref=\"root.test_communication\" href=\"\/live\">\n              <span translate=\"\" class=\"ng-scope\">Test Video<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "adf0bc2277d9f4822bdf6dbe65128587873db8ef",
+        "element": "<a class=\"button navbar-cta\" ui-sref=\"root.mp.list\" href=\"\/mp\/\">\n              <span translate=\"\" class=\"ng-scope\">Hitta r\u00e5dgivare<\/span>\n              <i class=\"fa fa-fw fa-search\"><\/i>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "4047eefef6551cd9b11f9ba7698140ac6a019bfd",
+        "element": "<a ui-sref=\"root.clients.list\" class=\"button right hide-for-user\" cmp-show-client=\"\" href=\"\/clients\">\n          <i class=\"fa fa-fw fa-calendar-o\"><\/i> <span translate=\"\" class=\"ng-scope\">Boka ett nytt m\u00f6te<\/span>\n        <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "c33ce7c53512ab54ff0aefee8fb01d28f1784e59",
+        "element": "<a cmp-show-advisor=\"\" ui-sref=\"root.clients.space({userId: booking.user.id})\" class=\"ng-binding\" href=\"\/clients\/2\">\n              Anna\n              Svensson\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2f478118a0a7d556a93e248bf95e71f577e11914",
+        "element": "<a cmp-show-client=\"\" ui-sref=\"root.clients.space({userId: booking.expert.id})\" class=\"ng-binding hide-for-user\" href=\"\/clients\/1\">\n              Markus\n              Waltre\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "5bfc6738aa1c61518abe55afcd36911d30d80003",
+        "element": "<a cmp-show-advisor=\"\" ui-sref=\"root.clients.space({userId: booking.user.id})\" class=\"ng-binding\" href=\"\/clients\/134\">\n              Klienten\n              Vall\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "952736d740fd31e4c32aac03062505831866b313",
+        "element": "<a cmp-show-advisor=\"\" ui-sref=\"root.clients.space({userId: booking.user.id})\" class=\"ng-binding\" href=\"\/clients\/7\">\n              Ab\n              Ba\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "1958840d360912084fb17e9f8fb9a5a9bf1b0c1d",
+        "element": "<a cmp-show-advisor=\"\" ui-sref=\"root.clients.space({userId: booking.user.id})\" class=\"ng-binding\" href=\"\/clients\/26\">\n              Pe\n              Te\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "ca81049a273d980e8a4e232fdcfb4c0f4b69364e",
+        "element": "<a ui-sref=\"root.footer.pricing\" cmp-show-advisor=\"\" translate=\"\" class=\"ng-scope\" href=\"\/pricing\">Pris<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "93f9e206b3264843722599217483748f080a1770",
+        "element": "<a ui-sref=\"root.footer.faq\" translate=\"\" class=\"ng-scope\" href=\"\/faq\">Support Center<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "69963aa2ba6881c5e7c12c67150e8687f2f38f7f",
+        "element": "<a href=\"\/\/blog.competencer.com\" translate=\"\" class=\"ng-scope\">Blogg<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "292790aad85f3b199cfee689e6a33516063e009f",
+        "element": "<a ui-sref=\"root.footer.aboutus\" translate=\"\" class=\"ng-scope\" href=\"\/aboutus\">Om oss<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "3a7ed023d95793fd254e2f099f22eb0a694e929b",
+        "element": "<a ui-sref=\"root.footer.termsofservice.advisor\" translate=\"\" class=\"ng-scope\" href=\"\/termsofservice\/advisor\">Anv\u00e4ndarvillkor<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "8af8be27fbc439167f42dbdedac25e0fe28fcf82",
+        "element": "<a ui-sref=\"root.footer.privacypolicy\" translate=\"\" class=\"ng-scope\" href=\"\/privacypolicy\">Integritetspolicy<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "fecee6e7c779f2ad4430713b68fbf57fb2d82f5b",
+        "element": "<a ui-sref=\"root.footer.contact\" translate=\"\" class=\"ng-scope\" href=\"\/contact\">Kontakt<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2c630ae2967f0df7d0ef8f160f7a00e253617db8",
+        "element": "<a href=\"\" ng-click=\"vm.switchLanguage()\"><strong translate=\"\" class=\"ng-scope\">English version<\/strong><\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      }
+    ],
+    "percentage": {
+      "here": 0,
+      "global": 0
+    },
+    "count": {
+      "seen": 38,
+      "tested": 0,
+      "tested_global": 0
+    }
+  },
+  {
+    "url": "\/settings\/account",
+    "elements": [
+      {
+        "hash": "f0d8fe3a692c011b5e2cec7f5dfea3e77e3b1197",
+        "element": "<button type=\"submit\" class=\"button\" ng-disabled=\"vm.savingPreferredLanguage\">\n                            <span translate=\"\" class=\"ng-scope\">Uppdatera<\/span>\n                        <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "c69e8da87f222ed1f417785a1c0b0e807cb37bbb",
+        "element": "<button type=\"submit\" class=\"button\" ng-disabled=\"vm.saving\">\n                            <span translate=\"\" class=\"ng-scope\">Uppdatera<\/span>\n                        <\/button>",
+        "type": "button",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click"
+          ],
+          "unseen_global": [
+            "click"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "abd198866c1549b8c2e59246a4fbd33513c421f4",
+        "element": "<button type=\"submit\" class=\"button ng-scope\" ng-disabled=\"vm.savingPassword\" translate=\"\">Uppdatera<\/button>",
+        "type": "button",
+        "tested": true,
+        "events": [
+          "click"
+        ],
+        "eventsStats": {
+          "unseen": [
+            
+          ],
+          "unseen_global": [
+            
+          ],
+          "seen_global": [
+            "click"
+          ]
+        },
+        "percentage": {
+          "here": 100,
+          "global": 100
+        }
+      },
+      {
+        "hash": "9284ef4d829ba57c5e6e392533cd1e79c117032b",
+        "element": "<a ui-sref=\"landing\" href=\"\/\">\n              <img src=\"\/images\/landing\/landing-logo-white-beta.png\" alt=\"Competencer\" class=\"logo\">\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "936c72e375050bff565174761ce1f608014536ba",
+        "element": "<a href=\"#\" class=\"ng-scope\"><span translate=\"\" class=\"ng-scope\">Meny<\/span><\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "f5239bf19a6345a68869094dbb3134e4f4ade616",
+        "element": "<a ui-sref=\"landingAdvisor\" translate=\"\" class=\"ng-scope\" href=\"\/advisor\">F\u00f6r r\u00e5dgivare<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "6e3f0f61e079811c644ef9238f047e82e8d9aeb6",
+        "element": "<a ui-sref=\"auth.register\" translate=\"\" class=\"ng-scope\" href=\"\/register\">Registera<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "87279dae772848d0ed906e7db03d2d816c80daed",
+        "element": "<a ui-sref=\"auth.login\" translate=\"\" class=\"ng-scope\" href=\"\/login\">Logga in<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "3de26e6e0ea28f3331dbdca9babe8a927c5e1c35",
+        "element": "<a ui-sref=\"root.mp.list\" translate=\"\" class=\"ng-scope\" href=\"\/mp\/\">Marknadsplats<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "7bf0cd94cba209f04680398a37ede82a294773ff",
+        "element": "<a href=\"#\" class=\"clearfix ng-scope\">\n              <div cmp-user-image=\"\" user=\"vm.currentUser\" size=\"small navbar-image\" class=\"ng-isolate-scope user-img user-img-small navbar-image\" style=\"background-image: url(http:\/\/localhost:3000\/media\/user_pictures\/54f40a478938d7a46b23705449f4a31c_7ciU3nz.jpg);\"><\/div> \n              <span class=\"ng-binding\">Markus<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "52713bd3170fdf1e854a36b20246f90706331bff",
+        "element": "<a href=\"\" ng-click=\"back($event);\" class=\"ng-binding\">Back<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "b888c43755bd424c4fe71f7b3a7238ace4af2ccd",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.general\" translate=\"\" class=\"ng-scope active\" href=\"\/settings\/account\">Inst\u00e4llningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "368c062a79bcc84252f78e131d638689cd7a189e",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.payout_settings\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/payments\">Utbetalningsinst\u00e4llningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "9dcb2b424e30dc99e7de41cac58b2e7eeeef1653",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.payouts\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/payouts\">Utbetalningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "b001a4b99466caacabb2ad35b77c1631fab04002",
+        "element": "<a ui-sref-active=\"active\" ui-sref=\"root.settings.transactions\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/transactions\">Transaktioner<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2738b62b39af9689f397d34e3e43fa34dfa719f8",
+        "element": "<a ng-click=\"vm.logout()\" translate=\"\" class=\"ng-scope\">Logga ut<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "6614ac0af504b43e63ab4d2198b01b178379f2b5",
+        "element": "<a ui-sref=\"root.clients.list\" ui-sref-opts=\"{reload: true}\" href=\"\/clients\">\n            <span cmp-show-client=\"\" translate=\"\" class=\"ng-scope hide-for-user\">Mina r\u00e5dgivare<\/span>\n            <span cmp-show-advisor=\"\" translate=\"\" class=\"ng-scope\">Mina klienter<\/span>\n          <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "9279c54175710cae11d05518b4e9ebd1e4e0bcc4",
+        "element": "<a ui-sref=\"root.bookings\" href=\"\/bookings\">\n              <span translate=\"\" class=\"ng-scope\">Bokningar<\/span>\n              <span class=\"label round ng-binding\" ng-show=\"vm.pendingCount\">2<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "dde45a5c8c451b66fc8b41c144555dbcb2c37b5d",
+        "element": "<a ui-sref=\"root.messages\" href=\"\/messages\">\n              <span translate=\"\" class=\"ng-scope\">Meddelanden<\/span>\n              <span class=\"label round ng-binding ng-hide\" ng-show=\"vm.unreadMessageCount\">0<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "fd8cc7d5bb530287a5cf0013247cfccb057ffe1b",
+        "element": "<a ui-sref=\"root.profileEdit.general\" translate=\"\" class=\"ng-scope\" href=\"\/account\/profile\/\">Min Profil<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "7fcd90f3eba62e112ddb7a534eab2766459fe1bd",
+        "element": "<a ui-sref=\"root.test_communication\" href=\"\/live\">\n              <span translate=\"\" class=\"ng-scope\">Test Video<\/span>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "adf0bc2277d9f4822bdf6dbe65128587873db8ef",
+        "element": "<a class=\"button navbar-cta\" ui-sref=\"root.mp.list\" href=\"\/mp\/\">\n              <span translate=\"\" class=\"ng-scope\">Hitta r\u00e5dgivare<\/span>\n              <i class=\"fa fa-fw fa-search\"><\/i>\n            <\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "38f9494d4e29bc66815b090bb55ca81d4fb14079",
+        "element": "<a ui-sref=\"root.settings.general\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/account\">Inst\u00e4llningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "ac4a86a17861fb5d01db6080afe83809fc6eb55a",
+        "element": "<a ui-sref=\"root.settings.payout_settings\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/payments\">Utbetalningsinst\u00e4llningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "51ffb7041f3a18ae1808446a713d2a3e40d08dd3",
+        "element": "<a ui-sref=\"root.settings.payouts\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/payouts\">Utbetalningar<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "a15aacc55706a559497d3dc152942531016e72a8",
+        "element": "<a ui-sref=\"root.settings.transactions\" translate=\"\" class=\"ng-scope\" href=\"\/settings\/transactions\">Transaktioner<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "6453ecd24070c37edaff098e337e52a67961c8fa",
+        "element": "<a class=\"select2-choice ui-select-match\" ng-class=\"{'select2-default': $select.isEmpty()}\" ng-click=\"$select.activate()\" aria-label=\"Select box select\" placeholder=\"Select or search a country in the list...\"><span ng-show=\"$select.isEmpty()\" class=\"select2-chosen ng-binding ng-hide\">Select or search a country in the list...<\/span> <span ng-hide=\"$select.isEmpty()\" class=\"select2-chosen\" ng-transclude=\"\"><span class=\"ng-binding ng-scope\">\n                                            Albanien\n                                        <\/span><\/span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class=\"select2-arrow ui-select-toggle\" ng-click=\"$select.toggle($event)\"><b><\/b><\/span><\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "ca81049a273d980e8a4e232fdcfb4c0f4b69364e",
+        "element": "<a ui-sref=\"root.footer.pricing\" cmp-show-advisor=\"\" translate=\"\" class=\"ng-scope\" href=\"\/pricing\">Pris<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "93f9e206b3264843722599217483748f080a1770",
+        "element": "<a ui-sref=\"root.footer.faq\" translate=\"\" class=\"ng-scope\" href=\"\/faq\">Support Center<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "69963aa2ba6881c5e7c12c67150e8687f2f38f7f",
+        "element": "<a href=\"\/\/blog.competencer.com\" translate=\"\" class=\"ng-scope\">Blogg<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "292790aad85f3b199cfee689e6a33516063e009f",
+        "element": "<a ui-sref=\"root.footer.aboutus\" translate=\"\" class=\"ng-scope\" href=\"\/aboutus\">Om oss<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "3a7ed023d95793fd254e2f099f22eb0a694e929b",
+        "element": "<a ui-sref=\"root.footer.termsofservice.advisor\" translate=\"\" class=\"ng-scope\" href=\"\/termsofservice\/advisor\">Anv\u00e4ndarvillkor<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "8af8be27fbc439167f42dbdedac25e0fe28fcf82",
+        "element": "<a ui-sref=\"root.footer.privacypolicy\" translate=\"\" class=\"ng-scope\" href=\"\/privacypolicy\">Integritetspolicy<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "fecee6e7c779f2ad4430713b68fbf57fb2d82f5b",
+        "element": "<a ui-sref=\"root.footer.contact\" translate=\"\" class=\"ng-scope\" href=\"\/contact\">Kontakt<\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2c630ae2967f0df7d0ef8f160f7a00e253617db8",
+        "element": "<a href=\"\" ng-click=\"vm.switchLanguage()\"><strong translate=\"\" class=\"ng-scope\">English version<\/strong><\/a>",
+        "type": "a",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "unseen_global": [
+            "click",
+            "blur",
+            "focus"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "5ceb8f28b2d6295cd6f0fc9e4a4c986be5fa1f4f",
+        "element": "<form ng-submit=\"vm.saveLanguageSettings()\" class=\"ng-pristine ng-valid\">\n                        <div class=\"row\">\n                            <div class=\"large-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Spr\u00e5k<\/span>\n\n                                    <p class=\"help-text ng-scope\" translate=\"\">Vilket spr\u00e5k vill du att vi anv\u00e4nder n\u00e4r vi kommunicerar med dig? P\u00e5 webbplatsen och i emails till exempel.<\/p>\n                                    <select ng-model=\"vm.user.preferred_language\" class=\"ng-pristine ng-untouched ng-valid\">\n                                        <option value=\"0\">Svenska<\/option>\n                                        <option value=\"1\">English<\/option>\n                                    <\/select>\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <button type=\"submit\" class=\"button\" ng-disabled=\"vm.savingPreferredLanguage\">\n                            <span translate=\"\" class=\"ng-scope\">Uppdatera<\/span>\n                        <\/button>\n                        <span cmp-spinner=\"\" ng-show=\"vm.savingPreferredLanguage\" compact=\"true\" class=\"right ng-isolate-scope ng-hide\"><div class=\"spinner spinner-compact\" ng-class=\"{'spinner-compact': compact}\">\n    <div class=\"bounce1\"><\/div>\n    <div class=\"bounce2\"><\/div>\n    <div class=\"bounce3\"><\/div>\n<\/div><\/span>\n                    <\/form>",
+        "type": "form",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "submit"
+          ],
+          "unseen_global": [
+            "submit"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "c63ae151f5d4686b6d523348cda14e0ae276fbbd",
+        "element": "<form ng-submit=\"vm.savePersonalInformation()\" class=\"ng-pristine ng-valid ng-valid-required\">\n\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <input type=\"file\" accept=\"image\/*\" tabindex=\"-1\" __afu_gen__=\"true\" style=\"width: 0px; height: 0px; position: absolute; padding: 0px; margin: 0px; overflow: hidden; opacity: 0;\"><div ng-file-select=\"\" ng-file-change=\"vm.uploadProfileImage($files)\" accept=\"image\/*\" class=\"button button-outlined upload\" ng-disabled=\"vm.saving\" __refelem__=\"true\" style=\"overflow: hidden;\">\n                                    <span translate=\"\" class=\"ng-scope\">Ladda upp profilfoto<\/span>\n                                <\/div>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <fieldset>\n                                    <div cmp-user-image=\"\" user=\"vm.user\" size=\"large\" class=\"ng-isolate-scope user-img user-img-large\" style=\"background-image: url(http:\/\/localhost:3000\/media\/user_pictures\/54f40a478938d7a46b23705449f4a31c_7ciU3nz.jpg);\"><\/div>\n                                <\/fieldset>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">F\u00f6rnamn<\/span>\n                                    <input type=\"text\" required=\"\" ng-model=\"vm.user.first_name\" class=\"ng-pristine ng-untouched ng-valid ng-valid-required\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Efternamn<\/span>\n                                    <input type=\"text\" required=\"\" ng-model=\"vm.user.last_name\" class=\"ng-pristine ng-untouched ng-valid ng-valid-required\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Land<\/span>\n                                    <div class=\"ui-select-full ui-select-container select2 select2-container ng-valid\" ng-class=\"{'select2-container-active select2-dropdown-open open': $select.open,\n                'select2-container-disabled': $select.disabled,\n                'select2-container-active': $select.focus,\n                'select2-allowclear': $select.allowClear &amp;&amp; !$select.isEmpty()}\" ng-model=\"vm.user.profile.country\"><a class=\"select2-choice ui-select-match\" ng-class=\"{'select2-default': $select.isEmpty()}\" ng-click=\"$select.activate()\" aria-label=\"Select box select\" placeholder=\"Select or search a country in the list...\"><span ng-show=\"$select.isEmpty()\" class=\"select2-chosen ng-binding ng-hide\">Select or search a country in the list...<\/span> <span ng-hide=\"$select.isEmpty()\" class=\"select2-chosen\" ng-transclude=\"\"><span class=\"ng-binding ng-scope\">\n                                            Albanien\n                                        <\/span><\/span> <!-- ngIf: $select.allowClear && !$select.isEmpty() --> <span class=\"select2-arrow ui-select-toggle\" ng-click=\"$select.toggle($event)\"><b><\/b><\/span><\/a><div class=\"select2-drop select2-with-searchbox select2-drop-active select2-display-none\" ng-class=\"{'select2-display-none': !$select.open}\"><div class=\"select2-search\" ng-show=\"$select.searchEnabled\"><input type=\"text\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"combobox\" aria-expanded=\"true\" aria-owns=\"ui-select-choices-0\" aria-label=\"Select box\" aria-activedescendant=\"ui-select-choices-row-0-0\" class=\"ui-select-search select2-input ng-pristine ng-untouched ng-valid\" ng-model=\"$select.search\"><\/div><ul class=\"ui-select-choices ui-select-choices-content select2-results ng-scope\" repeat=\"country.code as country in vm.countries | filter: $select.search\"><li class=\"ui-select-choices-group\" ng-class=\"{'select2-result-with-children': $select.choiceGrouped($group) }\"><div ng-show=\"$select.choiceGrouped($group)\" class=\"ui-select-choices-group-label select2-result-label ng-binding ng-hide\" ng-bind=\"$group.name\"><\/div><ul role=\"listbox\" id=\"ui-select-choices-0\" ng-class=\"{'select2-result-sub': $select.choiceGrouped($group), 'select2-result-single': !$select.choiceGrouped($group) }\" class=\"select2-result-single\"><!-- ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><!-- ngIf: $select.open --><!-- end ngRepeat: country in $select.items --><\/ul><\/li><\/ul><\/div><input ng-disabled=\"$select.disabled\" class=\"ui-select-focusser ui-select-offscreen ng-scope\" type=\"text\" id=\"focusser-0\" aria-label=\"Select box focus\" aria-haspopup=\"true\" role=\"button\"><\/div>\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"row\">\n                            <div class=\"small-6 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Stad<\/span>\n                                    <input type=\"text\" ng-model=\"vm.user.profile.city\" class=\"ng-pristine ng-untouched ng-valid\">\n                                <\/label>\n                            <\/div>\n\n                            <div class=\"small-6 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Postkod<\/span>\n                                    <input type=\"text\" ng-model=\"vm.user.profile.postal_code\" class=\"ng-pristine ng-untouched ng-valid\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Address rad 1<\/span>\n\n                                    <p class=\"help-text ng-scope\" cmp-show-advisor=\"\" translate=\"\">Denna information kommer inte vara synlig f\u00f6r dina klienter<\/p>\n                                    <input type=\"text\" ng-model=\"vm.user.profile.address_line1\" class=\"ng-pristine ng-untouched ng-valid\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Address rad 2<\/span>\n\n                                    <p class=\"help-text ng-scope\" cmp-show-advisor=\"\" translate=\"\">Denna information kommer inte vara synlig f\u00f6r dina klienter<\/p>\n                                    <input type=\"text\" ng-model=\"vm.user.profile.address_line2\" class=\"ng-pristine ng-untouched ng-valid\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n                        <div class=\"row\">\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Momsnummer<\/span>\n\n                                    <p class=\"help-text ng-scope\" cmp-show-advisor=\"\" translate=\"\">Om du vill att ditt momsnummer ska visas p\u00e5 dina kvitton, ange det h\u00e4r.<\/p>\n                                    <input type=\"text\" ng-model=\"vm.user.profile.vat_number\" class=\"ng-pristine ng-untouched ng-valid\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <button type=\"submit\" class=\"button\" ng-disabled=\"vm.saving\">\n                            <span translate=\"\" class=\"ng-scope\">Uppdatera<\/span>\n                        <\/button>\n                        <span cmp-spinner=\"\" ng-show=\"vm.saving\" compact=\"true\" class=\"right ng-isolate-scope ng-hide\"><div class=\"spinner spinner-compact\" ng-class=\"{'spinner-compact': compact}\">\n    <div class=\"bounce1\"><\/div>\n    <div class=\"bounce2\"><\/div>\n    <div class=\"bounce3\"><\/div>\n<\/div><\/span>\n                    <\/form>",
+        "type": "form",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "submit"
+          ],
+          "unseen_global": [
+            "submit"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "9b22963d7a269f3fb8296e6b5c5fc73f6cd0986b",
+        "element": "<form ng-submit=\"vm.saveNewPassword()\" class=\"ng-pristine ng-invalid ng-invalid-required\">\n                        <div class=\"row\">\n                            <div class=\"small-12 columns ng-hide\" ng-show=\"vm.errorMessage\">\n                                <div class=\"alert-box alert ng-binding\"><\/div>\n                            <\/div>\n                            <div class=\"small-12 columns ng-hide\" ng-show=\"vm.successMessage\">\n                                <div class=\"alert-box success ng-binding\"><\/div>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Gammalt l\u00f6senord<\/span>\n                                    <input type=\"password\" ng-model=\"vm.oldPassword\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">\n                                <\/label>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Nytt l\u00f6senord<\/span>\n                                    <input type=\"password\" ng-model=\"vm.newPassword\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">\n                                <\/label>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">\u00c5terupprepa nytt l\u00f6senord<\/span>\n                                    <input type=\"password\" ng-model=\"vm.newPasswordRepeat\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <button type=\"submit\" class=\"button ng-scope\" ng-disabled=\"vm.savingPassword\" translate=\"\">Uppdatera<\/button>\n                        <span cmp-spinner=\"\" ng-show=\"vm.savingPassword\" compact=\"true\" class=\"right ng-isolate-scope ng-hide\"><div class=\"spinner spinner-compact\" ng-class=\"{'spinner-compact': compact}\">\n    <div class=\"bounce1\"><\/div>\n    <div class=\"bounce2\"><\/div>\n    <div class=\"bounce3\"><\/div>\n<\/div><\/span>\n                    <\/form>",
+        "type": "form",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "submit"
+          ],
+          "unseen_global": [
+            "submit"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "4a317c5c44a777a151871a16f4c890ec5d5ac3da",
+        "element": "<input type=\"file\" accept=\"image\/*\" tabindex=\"-1\" __afu_gen__=\"true\" style=\"width: 0px; height: 0px; position: absolute; padding: 0px; margin: 0px; overflow: hidden; opacity: 0;\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "f409c4337c1c86ba483e33c5712528f5196e0263",
+        "element": "<input type=\"text\" required=\"\" ng-model=\"vm.user.first_name\" class=\"ng-pristine ng-untouched ng-valid ng-valid-required\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "23f0e81858d07e83d32e61b296e77917c1bd853f",
+        "element": "<input type=\"text\" required=\"\" ng-model=\"vm.user.last_name\" class=\"ng-pristine ng-untouched ng-valid ng-valid-required\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "c2b1c6a0e3bf26395ce46e92c9d9afd703280c0f",
+        "element": "<input type=\"text\" autocomplete=\"off\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"false\" role=\"combobox\" aria-expanded=\"true\" aria-owns=\"ui-select-choices-0\" aria-label=\"Select box\" aria-activedescendant=\"ui-select-choices-row-0-0\" class=\"ui-select-search select2-input ng-pristine ng-untouched ng-valid\" ng-model=\"$select.search\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "5d5cf3c43bda8c2b52f9c5a93ea0663ea07a3d3f",
+        "element": "<input ng-disabled=\"$select.disabled\" class=\"ui-select-focusser ui-select-offscreen ng-scope\" type=\"text\" id=\"focusser-0\" aria-label=\"Select box focus\" aria-haspopup=\"true\" role=\"button\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "2d4cf706635f42cd70728b66b1a688611d2742d0",
+        "element": "<input type=\"text\" ng-model=\"vm.user.profile.city\" class=\"ng-pristine ng-untouched ng-valid\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "d43ffe5f88d148c8cedbb92dab24a5c1f2256205",
+        "element": "<input type=\"text\" ng-model=\"vm.user.profile.postal_code\" class=\"ng-pristine ng-untouched ng-valid\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "f6efd42aa4aecfe92f25a06d2476a195b9da70f9",
+        "element": "<input type=\"text\" ng-model=\"vm.user.profile.address_line1\" class=\"ng-pristine ng-untouched ng-valid\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "802ec8c38251fae4af7e0a4bf0eb7ab9c2029663",
+        "element": "<input type=\"text\" ng-model=\"vm.user.profile.address_line2\" class=\"ng-pristine ng-untouched ng-valid\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "4af6efcbba2dcc0790b5391213087d5720c7ab2e",
+        "element": "<input type=\"text\" ng-model=\"vm.user.profile.vat_number\" class=\"ng-pristine ng-untouched ng-valid\">",
+        "type": "input",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "unseen_global": [
+            "input",
+            "click",
+            "invalid",
+            "focus",
+            "blur",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "f77c6e630dd992b85b251b1896fe1c0975725350",
+        "element": "<input type=\"password\" ng-model=\"vm.oldPassword\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">",
+        "type": "input",
+        "tested": true,
+        "events": [
+          "focus",
+          "blur",
+          "input",
+          "change"
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "invalid"
+          ],
+          "unseen_global": [
+            "click",
+            "invalid"
+          ],
+          "seen_global": [
+            "input",
+            "focus",
+            "blur",
+            "change"
+          ]
+        },
+        "percentage": {
+          "here": 67,
+          "global": 67
+        }
+      },
+      {
+        "hash": "6ade46b9c4d5a4b608387c1de0c24955bf02f45d",
+        "element": "<input type=\"password\" ng-model=\"vm.newPassword\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">",
+        "type": "input",
+        "tested": true,
+        "events": [
+          "focus",
+          "blur",
+          "input",
+          "change"
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "invalid"
+          ],
+          "unseen_global": [
+            "click",
+            "invalid"
+          ],
+          "seen_global": [
+            "input",
+            "focus",
+            "blur",
+            "change"
+          ]
+        },
+        "percentage": {
+          "here": 67,
+          "global": 67
+        }
+      },
+      {
+        "hash": "1278b92bbc00295c4bf0de4149d4f133bc88e48e",
+        "element": "<input type=\"password\" ng-model=\"vm.newPasswordRepeat\" required=\"\" class=\"ng-pristine ng-untouched ng-invalid ng-invalid-required\">",
+        "type": "input",
+        "tested": true,
+        "events": [
+          "focus",
+          "blur",
+          "input",
+          "change"
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "invalid"
+          ],
+          "unseen_global": [
+            "click",
+            "invalid"
+          ],
+          "seen_global": [
+            "input",
+            "focus",
+            "blur",
+            "change"
+          ]
+        },
+        "percentage": {
+          "here": 67,
+          "global": 67
+        }
+      },
+      {
+        "hash": "eb4f3c3b2623e76a5b66beea31a34281829b7dab",
+        "element": "<select ng-model=\"vm.user.preferred_language\" class=\"ng-pristine ng-untouched ng-valid\">\n                                        <option value=\"0\">Svenska<\/option>\n                                        <option value=\"1\">English<\/option>\n                                    <\/select>",
+        "type": "select",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "click",
+            "change"
+          ],
+          "unseen_global": [
+            "click",
+            "change"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      },
+      {
+        "hash": "7959394d53bce72320e77aff4373382068d87199",
+        "element": "<form ng-submit=\"vm.saveNewPassword()\" class=\"ng-dirty ng-submitted ng-invalid ng-invalid-required\">\n                        <div class=\"row\">\n                            <div class=\"small-12 columns ng-hide\" ng-show=\"vm.errorMessage\">\n                                <div class=\"alert-box alert ng-binding\"><\/div>\n                            <\/div>\n                            <div class=\"small-12 columns\" ng-show=\"vm.successMessage\">\n                                <div class=\"alert-box success ng-binding\">L\u00f6senordet uppdaterat<\/div>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Gammalt l\u00f6senord<\/span>\n                                    <input type=\"password\" ng-model=\"vm.oldPassword\" required=\"\" class=\"ng-touched ng-dirty ng-animate ng-valid-parse-remove ng-valid-remove ng-valid-required-remove ng-invalid-add ng-invalid-required-add ng-invalid ng-invalid-required ng-valid-parse-remove-active ng-valid-remove-active ng-valid-required-remove-active ng-invalid-add-active ng-invalid-required-add-active\">\n                                <\/label>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">Nytt l\u00f6senord<\/span>\n                                    <input type=\"password\" ng-model=\"vm.newPassword\" required=\"\" class=\"ng-touched ng-dirty ng-animate ng-valid-parse-remove ng-valid-remove ng-valid-required-remove ng-invalid-add ng-invalid-required-add ng-invalid ng-invalid-required ng-valid-parse-remove-active ng-valid-remove-active ng-valid-required-remove-active ng-invalid-add-active ng-invalid-required-add-active\">\n                                <\/label>\n                            <\/div>\n                            <div class=\"small-12 columns\">\n                                <label>\n                                    <span translate=\"\" class=\"ng-scope\">\u00c5terupprepa nytt l\u00f6senord<\/span>\n                                    <input type=\"password\" ng-model=\"vm.newPasswordRepeat\" required=\"\" class=\"ng-touched ng-dirty ng-animate ng-valid-parse-remove ng-valid-remove ng-valid-required-remove ng-invalid-add ng-invalid-required-add ng-invalid ng-invalid-required ng-valid-parse-remove-active ng-valid-remove-active ng-valid-required-remove-active ng-invalid-add-active ng-invalid-required-add-active\">\n                                <\/label>\n                            <\/div>\n                        <\/div>\n\n                        <button type=\"submit\" class=\"button ng-scope\" ng-disabled=\"vm.savingPassword\" translate=\"\">Uppdatera<\/button>\n                        <span cmp-spinner=\"\" ng-show=\"vm.savingPassword\" compact=\"true\" class=\"right ng-isolate-scope ng-hide\"><div class=\"spinner spinner-compact\" ng-class=\"{'spinner-compact': compact}\">\n    <div class=\"bounce1\"><\/div>\n    <div class=\"bounce2\"><\/div>\n    <div class=\"bounce3\"><\/div>\n<\/div><\/span>\n                    <\/form>",
+        "type": "form",
+        "tested": false,
+        "events": [
+          
+        ],
+        "eventsStats": {
+          "unseen": [
+            "submit"
+          ],
+          "unseen_global": [
+            "submit"
+          ],
+          "seen_global": [
+            
+          ]
+        },
+        "percentage": {
+          "here": 0,
+          "global": 0
+        }
+      }
+    ],
+    "percentage": {
+      "here": 8,
+      "global": 8
+    },
+    "count": {
+      "seen": 53,
+      "tested": 4,
+      "tested_global": 4
+    }
+  }
+]
