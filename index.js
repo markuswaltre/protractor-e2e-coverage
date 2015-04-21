@@ -61,56 +61,49 @@ CoveragePlugin.prototype.updateElement = function(event, obj, url) {
 	var self = this;	
 
 	var hash = self.hash(obj);
-  var elem = self.findElement(hash);
-  if(elem) {
-    elem.tested = true;
 
-    if(url in elem.seen) {
-      if(elem.seen[url].indexOf(event) === -1) {
-        elem.seen[url].push(event);
-      }
-    } else {
-      elem.seen[url] = [event];
+  var index = _.findIndex(self.DOMelements, {'url': url});
+  var elem = _.findIndex(self.DOMelements[index].elements, {'hash': hash});
+
+  if(elem !== -1) {
+    var element = self.DOMelements[index].elements[elem];
+
+    element.tested = true;
+
+    if(element.events.indexOf(event) === -1) {
+      element.events.push(event);
     }
-
-    // if(elem.seen.events.indexOf(event) === -1) {
-    //   elem.seen.events.push(event);
-    // }
-
-    // if(elem.seen.locations.indexOf(url) === -1) {
-    //   elem.seen.locations.push(url);
-    // }
   }
 }
-
-CoveragePlugin.prototype.findElement = function(hash) {
-	var self = this;
-  return _.findWhere(self.DOMelements, {'hash': hash});
-}
-
 
 CoveragePlugin.prototype.storeElement = function(element, type) {
 	var self = this;
 
-  var DOMelement = element.item;
+  var hash = self.hash(element.item);
+  var index = _.findIndex(self.DOMelements, {'url': element.location});
 
-  var h = self.hash(DOMelement);
-  var exists = !!self.findElement(h);
-
-  if(!exists) {
-    var obj = { 
-      'hash': h,
-      'element': DOMelement,
-      'elementHashed': DOMelement.replace(/\s\bclass=("[^"]+")/g, ' '),
+  // element structure
+  function buildElement() {
+    return {
+      'hash': hash,
+      'element': element.item,
       'type': type,
       'tested': false,
-      'seen': {},
-      'locations': [element.location]
+      'events': []
     }
-    
-    self.DOMelements.push(obj);
-  } else {
-    self.findElement(h).locations.push(element.location);
+  }
+
+  // if the url hasn't been seen
+  if(index === -1) {
+    var urlObj = {
+      'url': element.location,
+      'elements': [buildElement()]
+    }
+    self.DOMelements.push(urlObj);
+  } 
+  // if the item on the location hasn't been seen
+  else if(_.findIndex(self.DOMelements[index].elements, {'hash': hash}) === -1) {
+      self.DOMelements[index].elements.push(buildElement());
   }
 }
 
