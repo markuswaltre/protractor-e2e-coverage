@@ -22,18 +22,50 @@
 					<% _.each(state.elements, function(elem) { %>
 						<div onClick="toggleElement(this, 'ul')">
 							<p>
-								Tested: <%- elem.tested %>
-								<%- elem.element %>
+								Tested: <%- elem.tested %>, Type: <%- elem.type %> <br>
+								Percentage here <strong><%- elem.percentage.here %></strong>%
+								Percentage global <strong><%- elem.percentage.global %></strong>% <br>
 							</p>
 
 							<ul style="display: none;">
-								<li><%- elem.element %></li>
-								<li><%- elem.type %></li>
-								<li><%- elem.tested %></li>
-								<li><%- elem.hash %></li>
 								<li>
+									Element<br>
+									<%- elem.element %>
+								</li>
+								<li>
+									Element type<br>
+									<%- elem.type %>
+								</li>
+								<li>
+									Tested<br>
+									<%- elem.tested %>
+								</li>
+								<li>
+									Hash<br>
+									<%- elem.hash %>
+								</li>
+								<li>
+									Events seen here<br>
 									<% _.each(elem.events, function(event) { %>
-										<span><%- event %></span>
+										<i>'<%- event %>'</i> 
+									<% }); %>
+								</li>
+								<li>
+									Events not seen here<br>
+									<% _.each(elem.eventsStats.unseen, function(event) { %>
+										<i>'<%- event %>'</i> 
+									<% }); %>
+								</li>
+								<li>
+									Events seen global<br>
+									<% _.each(elem.eventsStats.seen_global, function(event) { %>
+										<i>'<%- event %>'</i> 
+									<% }); %>
+								</li>
+								<li>
+									Events not seen global<br>
+									<% _.each(elem.eventsStats.unseen_global, function(event) { %>
+										<i>'<%- event %>'</i> 
 									<% }); %>
 								</li>
 							</ul>
