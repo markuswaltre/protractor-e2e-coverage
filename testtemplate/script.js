@@ -39,6 +39,8 @@ getConfig();
 getData();
 
 function rebuildData() {
+	var statisticsObjects = [];
+
 	data.forEach(function(state) {
 		var that = this;
 
@@ -54,6 +56,19 @@ function rebuildData() {
 			if(elem.tested) {
 				tested+=1
 			};
+
+			var statisticsObj = _.findWhere(statisticsObjects, {'hash': elem.hash});
+
+			if(typeof statisticsObj === "undefined") {
+				var obj = {
+					"hash": elem.hash,
+					"type": elem.type,
+					"tested": elem.tested
+				}
+				statisticsObjects.push(obj);
+			} else if(elem.tested) {
+				statisticsObj.seen = elem.tested;
+			}
 
 			var gl = findGlobal(elem.hash);
 			if(gl[0]) {
@@ -123,8 +138,38 @@ function rebuildData() {
 		return found;
 	}
 
+	var st_tested = 0, types = [];
+	_.forEach(statisticsObjects, function(element) {
+		if(element.tested) st_tested += 1;
+
+		var type = _.findWhere(types, {'type': element.type});
+		if(typeof type === "undefined") {
+			var obj = {
+				"type": element.type,
+				"count": 1,
+				"tested": element.tested ? 1 : 0
+			};
+			types.push(obj);
+		} else {
+			type.count += 1;
+			type.tested += element.tested ? 1 : 0;
+		}
+	});
+
+	_.forEach(types, function(type) {
+		type.percentage = Math.round(type.tested/type.count*100);
+	});
+
+	statistics.count = statisticsObjects.length;
+	statistics.tested = st_tested;
+	statistics.percentage = Math.round(st_tested/ statisticsObjects.length*100);
+	statistics.types = types;
+
+	console.log(statistics);
+
 	console.dir(data);
 	console.log(data);
+	console.log(statisticsObjects);
 
 	buildTemplates();
 	buildStatistics();

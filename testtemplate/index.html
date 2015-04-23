@@ -8,11 +8,24 @@
 	<div id="states"></div>
 
 	<script type="text/template" id="template_statistics">
-		<h1>Statistics</h1>
+		<h1>
+			Statistics
+			Count: <%- statistics.count %> <br>
+			Tested: <%- statistics.tested %> <br>
+			Percentage: <%- statistics.percentage %>% <br>
+		</h1>
+		<% _.each(statistics.types, function(type) { %>
+			<h3>
+				Type: <%- type.type %> <br>
+				Count: <%- type.count %> <br>
+				Tested: <%- type.tested %> <br>
+				Percentage: <%- type.percentage %>%
+			</h3>
+		<% }); %>
 	</script>
 
 	<script type="text/template" id="template_types">
-		<h1 onClick="toggleTypes(this)">Listened to in project</h1>
+		<h1 onClick="toggleTypes(this)">Project config</h1>
 		<div class="types" style="display: none;">
 			<% _.each(types, function(type) { %>
 				<div class="type">
