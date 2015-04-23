@@ -225,13 +225,12 @@ function toggleState(el) {
 }
 
 function toggleElement(el, next) {
-	$(el).find(next).toggle();
+	$(el).next(next).toggle();
 }
 
 function toggleTypes(el) {
 	$(el).siblings('.types').toggle();
 }
 
-$('.ui.accordion')
-  .accordion()
-;
+// todo remove the exclusive feature
+$('.ui.accordion').accordion();

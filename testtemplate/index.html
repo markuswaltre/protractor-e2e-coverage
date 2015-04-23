@@ -3,6 +3,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="semantic.css">
+	<link rel="stylesheet" href="icon.css">
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -162,12 +163,55 @@
 							<% _.each(state.elements, function(elem) { %>
 							  <div class="item">
 							  	<i class="icon star"></i>
-							    <div class="content">
+							    <div class="content" onClick="toggleElement(this, '.segment')">
 							      <div class="header"><%- elem.type %></div>
 										Tested: <%- elem.tested %>,
 										Percentage here <strong><%- elem.percentage.here %></strong>%, 
 										Percentage global <strong><%- elem.percentage.global %></strong>%
 							    </div>
+									<div class="ui segment" style="display: none;">
+										<div class="ui top attached secondary segment">
+											<code><%- elem.element %></code>
+										</div>
+										<div class="ui bottom attached segment">
+								      <a class="ui label pointing right">Hash</a>
+											<%- elem.hash %>
+										</div>
+
+										<h4>Events here</h4>
+
+										<div class="ui two column stackable grid segment">
+										  <div class="column">
+										  	<div class="ui top left attached label">Tested</div>
+												<% _.each(elem.events, function(event) { %>
+										    	<div class="ui green horizontal label"><%- event %></div>
+												<% }); %>
+										  </div>
+										  <div class="column">
+										  	<div class="ui top left attached label">Not tested</div>
+												<% _.each(elem.eventsStats.unseen, function(event) { %>
+										    	<div class="ui red horizontal label"><%- event %></div>
+												<% }); %>
+										  </div>
+										</div>
+
+										<h4>Events global</h4>
+										<div class="ui two column stackable grid segment">
+										  <div class="column">
+										  	<div class="ui top left attached label">Tested</div>
+												<% _.each(elem.eventsStats.seen_global, function(event) { %>
+										    	<div class="ui green horizontal label"><%- event %></div>
+												<% }); %>
+										  </div>
+										  <div class="column">
+										  	<div class="ui top left attached label">Not tested</div>
+												<% _.each(elem.eventsStats.unseen_global, function(event) { %>
+										    	<div class="ui red horizontal label"><%- event %></div>
+												<% }); %>
+										  </div>
+										</div>
+
+									</div>
 							  </div>
 						  <% }); %>
 						</div>
@@ -175,87 +219,6 @@
 			  <% }); %>
 			</div>
 		</div>
-
-		<% _.each(states, function(state) { %>
-			<div class="state">
-				<div class="header" onClick="toggleState(this)">
-					<h1><%- state.url %></h1>
-					<h3>
-						Elements: <%- state.count.seen %>, 
-						Elements tested here: <%- state.count.tested %>, 
-						Elements tested global: <%- state.count.tested_global %> <br>
-						Percentage here: <%- state.percentage.here %>%, 
-						Percentage global: <%- state.percentage.global %>%
-					</h3>
-				</div>
-				<div class="content" style="display: none;">
-					<div class="types">
-						<% _.each(state.types, function(type) { %>
-							<h5>
-								Type: <%- type.type %> <br>
-								Count: <%- type.seen %> <br>
-								Here: <%- type.here %> <br>
-								Global: <%- type.global %> 
-							</h5>
-						<% }); %>
-					</div>
-
-					<% _.each(state.elements, function(elem) { %>
-						<div onClick="toggleElement(this, 'ul')">
-							<p>
-								Tested: <%- elem.tested %>, Type: <%- elem.type %> <br>
-								Percentage here <strong><%- elem.percentage.here %></strong>%
-								Percentage global <strong><%- elem.percentage.global %></strong>% <br>
-							</p>
-
-							<ul style="display: none;">
-								<li>
-									Element<br>
-									<%- elem.element %>
-								</li>
-								<li>
-									Element type<br>
-									<%- elem.type %>
-								</li>
-								<li>
-									Tested<br>
-									<%- elem.tested %>
-								</li>
-								<li>
-									Hash<br>
-									<%- elem.hash %>
-								</li>
-								<li>
-									Events seen here<br>
-									<% _.each(elem.events, function(event) { %>
-										<i>'<%- event %>'</i> 
-									<% }); %>
-								</li>
-								<li>
-									Events not seen here<br>
-									<% _.each(elem.eventsStats.unseen, function(event) { %>
-										<i>'<%- event %>'</i> 
-									<% }); %>
-								</li>
-								<li>
-									Events seen global<br>
-									<% _.each(elem.eventsStats.seen_global, function(event) { %>
-										<i>'<%- event %>'</i> 
-									<% }); %>
-								</li>
-								<li>
-									Events not seen global<br>
-									<% _.each(elem.eventsStats.unseen_global, function(event) { %>
-										<i>'<%- event %>'</i> 
-									<% }); %>
-								</li>
-							</ul>
-						</div>
-						<hr>
-					<% }); %>
-				</div>
-			</div>
-		<% }); %>
 	</script>
 
 	<script type="text/template" id="config"></script>
