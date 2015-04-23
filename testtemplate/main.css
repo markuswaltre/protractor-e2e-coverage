@@ -1,0 +1,13 @@
+body {
+	background-color: white;
+}
+
+.main {
+	max-width: 850px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.statistics-types {
+	padding-top: 50px;
+}

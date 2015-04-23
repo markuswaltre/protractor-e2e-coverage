@@ -1,6 +1,7 @@
 var data = [];
 var config = [];
 var statistics = [];
+var statistics_types = [];
 var globals = {};
 
 function getData() {
@@ -105,6 +106,11 @@ function rebuildData() {
 			}
 		});
 
+		_.forEach(types, function(type) {
+			type.percentage_here = Math.round(type.here/type.seen*100);
+			type.percentage_global = Math.round(type.global/type.seen*100);
+		});	
+
 		state.percentage = {
 			'here': Math.round(tested/seen*100),
 			'global': Math.round(global/seen*100)
@@ -163,7 +169,7 @@ function rebuildData() {
 	statistics.count = statisticsObjects.length;
 	statistics.tested = st_tested;
 	statistics.percentage = Math.round(st_tested/ statisticsObjects.length*100);
-	statistics.types = types;
+	statistics_types = types;
 
 	console.log(statistics);
 
@@ -172,7 +178,8 @@ function rebuildData() {
 	console.log(statisticsObjects);
 
 	buildTemplates();
-	buildStatistics();
+	// buildStatistics();
+	// buildStatisticsTypes();
 }
 
 function buildTemplates() {
@@ -182,6 +189,8 @@ function buildTemplates() {
 
 	var div = $("#states");
 	div.append(t({states: data}));
+
+	$('.ui.accordion').accordion('refresh');
 };
 
 function buildTypes() {
@@ -202,6 +211,15 @@ function buildStatistics() {
 	div.append(t({statistics: statistics}));
 }
 
+function buildStatisticsTypes() {
+	var t = _.template(
+		$("script#template_statistics_types").html()
+	);
+
+	var div = $("#statistics_types");
+	div.append(t({types: statistics_types}));
+}
+
 function toggleState(el) {
 	$(el).parent().find('.content').toggle();
 }
@@ -213,3 +231,7 @@ function toggleElement(el, next) {
 function toggleTypes(el) {
 	$(el).siblings('.types').toggle();
 }
+
+$('.ui.accordion')
+  .accordion()
+;
