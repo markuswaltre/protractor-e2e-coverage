@@ -24,7 +24,6 @@
 						</a>
 						<a href="https://github.com/markuswaltre/protractor-e2e-coverage" class="item">
 							Github
-							<!-- <div class="floating ui teal label">141</div> -->
 						</a>
 					</div>
 				</div>
@@ -41,9 +40,7 @@
 			<div id="statistics_types" class="row"></div>
 
 
-			<h4 class="ui horizontal header divider">
-				States
-			</h4>
+			<h3>States</h3>
 			<div id="states" class="row"></div>
 
 		</div>
@@ -162,7 +159,11 @@
 						<div class="ui divided very relaxed list">
 							<% _.each(state.elements, function(elem) { %>
 							  <div class="item">
-							  	<i class="icon star"></i>
+									<% if(elem.tested) { %>
+										<i class="icon green checkmark"></i>
+									<% } else { %>
+										<i class="icon red remove"></i>
+									<% } %>
 							    <div class="content" onClick="toggleElement(this, '.segment')">
 							      <div class="header"><%- elem.type %></div>
 										Tested: <%- elem.tested %>,

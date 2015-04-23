@@ -178,7 +178,7 @@ function rebuildData() {
 	console.log(statisticsObjects);
 
 	buildTemplates();
-	// buildStatistics();
+	buildStatistics();
 	// buildStatisticsTypes();
 }
 

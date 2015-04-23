@@ -11,3 +11,9 @@ body {
 .statistics-types {
 	padding-top: 50px;
 }
+
+span.ui.mini.tag.label {
+  position: absolute;
+  margin-top: -20px;
+  right: 28px;
+}
