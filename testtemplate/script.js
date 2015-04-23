@@ -1,5 +1,6 @@
 var data = [];
 var config = [];
+var statistics = [];
 var globals = {};
 
 function getData() {
@@ -10,7 +11,6 @@ function getData() {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			data = JSON.parse(xmlhttp.responseText);
-			// buildTemplates(data);
 			rebuildData();
 		} 
 	}
@@ -27,6 +27,7 @@ function getConfig() {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			config = JSON.parse(xmlhttp.responseText);
+			buildTypes();
 		} 
 	}
 
@@ -45,14 +46,19 @@ function rebuildData() {
 		var tested = 0;
 		var global = 0;
 
+		var types = [];
+
 		state.elements.forEach(function(elem) {
 			var globalEvents = [];
 
-			if(elem.tested) tested+=1;
+			if(elem.tested) {
+				tested+=1
+			};
 
 			var gl = findGlobal(elem.hash);
-
-			if(gl[0]) global+=1;
+			if(gl[0]) {
+				global+=1;
+			}
 
 			var unseenLocal = findEvents(elem.type, elem.events);
 			var unseenGlobal = findEvents(elem.type, gl[1]);
@@ -67,6 +73,21 @@ function rebuildData() {
 				'here': Math.round(elem.events.length/(elem.events.length + elem.eventsStats.unseen.length)*100),
 				'global': Math.round(gl[1].length/(gl[1].length + elem.eventsStats.unseen_global.length)*100)
 			}
+
+			var typesCount = _.findWhere(types, {'type': elem.type});
+			if(typeof typesCount === "undefined") {
+				var obj = {
+					"type": elem.type,
+					"seen": 1,
+					"here": elem.tested ? 1 : 0,
+					"global": gl[0] ? 1 : 0
+				}
+				types.push(obj);
+			} else {
+				typesCount.seen += 1;
+				typesCount.here += elem.tested ? 1 : 0;
+				typesCount.global += gl[0] ? 1 : 0;
+			}
 		});
 
 		state.percentage = {
@@ -79,6 +100,8 @@ function rebuildData() {
 			'tested': tested,
 			'tested_global': global
 		}
+
+		state.types = types;
 	});
 
 	function findEvents(type, events) {
@@ -100,17 +123,39 @@ function rebuildData() {
 		return found;
 	}
 
+	console.dir(data);
+	console.log(data);
+
 	buildTemplates();
+	buildStatistics();
 }
 
 function buildTemplates() {
 	var t = _.template(
-		$("script#main_template").html()
+		$("script#template_states").html()
 	);
 
-	var items = $("#container");
-	items.append(t({states: data}));
+	var div = $("#states");
+	div.append(t({states: data}));
 };
+
+function buildTypes() {
+	var t = _.template(
+		$("script#template_types").html()
+	);
+
+	var div = $("#types");
+	div.append(t({types: config}));
+}
+
+function buildStatistics() {
+	var t = _.template(
+		$("script#template_statistics").html()
+	);
+
+	var div = $("#statistics");
+	div.append(t({statistics: statistics}));
+}
 
 function toggleState(el) {
 	$(el).parent().find('.content').toggle();
@@ -118,4 +163,8 @@ function toggleState(el) {
 
 function toggleElement(el, next) {
 	$(el).find(next).toggle();
+}
+
+function toggleTypes(el) {
+	$(el).siblings('.types').toggle();
 }

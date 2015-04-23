@@ -3,9 +3,32 @@
   <meta charset="utf-8">
 </head>
 <body>
-	<div id="container"></div>
+	<div id="types"></div>
+	<div id="statistics"></div>
+	<div id="states"></div>
 
-	<script type="text/template" id="main_template">
+	<script type="text/template" id="template_statistics">
+		<h1>Statistics</h1>
+	</script>
+
+	<script type="text/template" id="template_types">
+		<h1 onClick="toggleTypes(this)">Listened to in project</h1>
+		<div class="types" style="display: none;">
+			<% _.each(types, function(type) { %>
+				<div class="type">
+					<h3>
+						Type: <%- type.type %> <br>
+						Events: 
+						<% _.each(type.events, function(event) { %>
+							<%- event %>, 
+						<% }); %>
+					</h3>
+				</div>
+			<% }); %>
+		</div>
+	</script>
+
+	<script type="text/template" id="template_states">
 		<% _.each(states, function(state) { %>
 			<div class="state">
 				<div class="header" onClick="toggleState(this)">
@@ -19,6 +42,17 @@
 					</h3>
 				</div>
 				<div class="content" style="display: none;">
+					<div class="types">
+						<% _.each(state.types, function(type) { %>
+							<h5>
+								Type: <%- type.type %> <br>
+								Count: <%- type.seen %> <br>
+								Here: <%- type.here %> <br>
+								Global: <%- type.global %> 
+							</h5>
+						<% }); %>
+					</div>
+
 					<% _.each(state.elements, function(elem) { %>
 						<div onClick="toggleElement(this, 'ul')">
 							<p>
