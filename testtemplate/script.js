@@ -1,8 +1,10 @@
+// hehe dont read this
+// you have been warned
+
 var data = [];
 var config = [];
 var statistics = [];
 var statistics_types = [];
-var globals = {};
 
 function getData() {
 
@@ -28,7 +30,6 @@ function getConfig() {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			config = JSON.parse(xmlhttp.responseText);
-			buildTypes();
 		} 
 	}
 
@@ -36,15 +37,10 @@ function getConfig() {
 	xmlhttp.send();
 }
 
-getConfig();
-getData();
-
 function rebuildData() {
 	var statisticsObjects = [];
 
 	data.forEach(function(state) {
-		var that = this;
-
 		var seen = state.elements.length;
 		var tested = 0;
 		var global = 0;
@@ -72,9 +68,7 @@ function rebuildData() {
 			}
 
 			var gl = findGlobal(elem.hash);
-			if(gl[0]) {
-				global+=1;
-			}
+			if(gl[0]) global+=1;
 
 			var unseenLocal = findEvents(elem.type, elem.events);
 			var unseenGlobal = findEvents(elem.type, gl[1]);
@@ -85,6 +79,7 @@ function rebuildData() {
 				'unseen_global': unseenGlobal,
 				'seen_global': seenGlobal
 			};
+
 			elem.percentage = {
 				'here': Math.round(elem.events.length/(elem.events.length + elem.eventsStats.unseen.length)*100),
 				'global': Math.round(gl[1].length/(gl[1].length + elem.eventsStats.unseen_global.length)*100)
@@ -98,6 +93,7 @@ function rebuildData() {
 					"here": elem.tested ? 1 : 0,
 					"global": gl[0] ? 1 : 0
 				}
+
 				types.push(obj);
 			} else {
 				typesCount.seen += 1;
@@ -171,65 +167,25 @@ function rebuildData() {
 	statistics.percentage = Math.round(st_tested/ statisticsObjects.length*100);
 	statistics_types = types;
 
-	console.log(statistics);
-
-	console.dir(data);
-	console.log(data);
-	console.log(statisticsObjects);
-
-	buildTemplates();
-	buildStatistics();
-	buildStatisticsTypes();
+	build();
 }
 
-function buildTemplates() {
-	var t = _.template(
-		$("script#template_states").html()
-	);
-
-	var div = $("#states");
-	div.append(t({states: data}));
-
+function build() {
+	buildTemplate("#states", "script#template_states", data);
+	buildTemplate("#statistics", "script#template_statistics", statistics);
+	buildTemplate("#statistics_types", "script#template_statistics_types", statistics_types);
+	$('.ui.accordion').accordion();
 	$('.ui.accordion').accordion('refresh');
-};
-
-function buildTypes() {
-	var t = _.template(
-		$("script#template_types").html()
-	);
-
-	var div = $("#types");
-	div.append(t({types: config}));
 }
 
-function buildStatistics() {
-	var t = _.template(
-		$("script#template_statistics").html()
-	);
-
-	var div = $("#statistics");
-	div.append(t({statistics: statistics}));
-}
-
-function buildStatisticsTypes() {
-	var t = _.template(
-		$("script#template_statistics_types").html()
-	);
-
-	var div = $("#statistics_types");
-	div.append(t({types: statistics_types}));
-}
-
-function toggleState(el) {
-	$(el).parent().find('.content').toggle();
+function buildTemplate(id, scriptId, data) {
+	var t = _.template($(scriptId).html());
+	$(id).append(t({input: data}));
 }
 
 function toggleElement(el, next) {
 	$(el).next(next).toggle();
 }
 
-function toggleTypes(el) {
-	$(el).siblings('.types').toggle();
-}
-
-$('.ui.accordion').accordion();
+getConfig();
+getData();
