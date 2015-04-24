@@ -235,19 +235,16 @@ CoveragePlugin.prototype.outputResults = function(done) {
     if (e.code != 'EEXIST') throw e;
   }
 
-  var stream = fs.createReadStream(path.join(__dirname, 'index.html'));
+  // build coverage file
   var outfileCoverage = path.join(self.outdir, 'coverage.json');
   fs.writeFileSync(outfileCoverage, JSON.stringify(self.DOMelements));
 
+  // save config setting
   var outfileConfig = path.join(self.outdir, 'config.json');
   fs.writeFileSync(outfileConfig, JSON.stringify(self.config.elements));
 
-  stream.pipe(fs.createWriteStream(path.join(this.outdir, 'index.html')));
-  stream.on('end', done);
-
-
-  // test
-  // ncp(__dirname, self.outdir, done);
+  // copy report folder
+  ncp(__dirname + '/report', self.outdir + '/report', done);
 };
 
 CoveragePlugin.prototype.postResults = function(config) {

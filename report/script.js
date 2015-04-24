@@ -9,7 +9,7 @@ var statistics_types = [];
 function getData() {
 
 	var xmlhttp = new XMLHttpRequest();
-	var url = "coverage.json";
+	var url = "../coverage.json";
 
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -25,7 +25,7 @@ function getData() {
 function getConfig() {
 
 	var xmlhttp = new XMLHttpRequest();
-	var url = "config.json";
+	var url = "../config.json";
 
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
