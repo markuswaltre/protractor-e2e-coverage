@@ -82,10 +82,44 @@
 		<div class="sixteen wide column">
 			<% _.each(types, function(type, index) { %>
 				<div class="ui <% if(index == 0) print('top') %><% if(index == types.length - 1) print ('bottom') %> attached segment">
-					<%- type.type %>
-					Count: <%- type.count %>, 
-					Tested: <%- type.tested %>,
-					Percentage: <%- type.percentage %>%
+				<div class="ui three column grid">
+				  <div class="column">
+				    <div class="ui horizontal segment">
+							<div class="ui mini horizontal statistic">
+							  <div class="value">
+							    <%- type.count %>
+							  </div>
+							  <div class="label">
+							    <span class="ui label"><%- type.type %></span>
+							  </div>
+							</div>
+				    </div>
+				  </div>
+				  <div class="column">
+				    <div class="ui horizontal segment">
+    					<div class="ui mini horizontal statistic">
+							  <div class="value">
+							    <%- type.tested %>
+							  </div>
+							  <div class="label">
+							    Tested
+							  </div>
+							</div>
+				    </div>
+				  </div>
+				  <div class="column">
+				    <div class="ui horizontal segment">
+    					<div class="ui mini horizontal statistic">
+							  <div class="value">
+							    <%- type.percentage %>%
+							  </div>
+							  <div class="label">
+							    Coverage
+							  </div>
+							</div>
+				    </div>
+				  </div>
+				</div>
 				</div>
 			<% }); %>
 		</div>
@@ -109,7 +143,6 @@
 	</script>
 
 	<script type="text/template" id="template_states">
-
 		<div class="sixteen wide column">
 			<div class="ui styled fluid accordion">
 				<% _.each(states, function(state) { %>
@@ -269,7 +302,9 @@
 										<i class="icon red remove"></i>
 									<% } %>
 									<div class="content element-header" onClick="toggleElement(this, '.segment')">
-										<div class="header"><%- elem.type %></div>
+										<div class="header">
+											<span class="ui small label"><%- elem.type %></span>
+										</div>
 
 										<div class="ui very relaxed horizontal list">
 											<div class="item">
@@ -284,7 +319,7 @@
 										</div>
 
 									</div>
-									<div class="ui segment" style="display: none;">
+									<div class="ui segment tertiary" style="display: none;">
 										<div class="ui top attached secondary segment">
 											<code><%- elem.element %></code>
 										</div>
