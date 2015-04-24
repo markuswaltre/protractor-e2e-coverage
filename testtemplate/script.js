@@ -179,7 +179,7 @@ function rebuildData() {
 
 	buildTemplates();
 	buildStatistics();
-	// buildStatisticsTypes();
+	buildStatisticsTypes();
 }
 
 function buildTemplates() {
@@ -232,5 +232,4 @@ function toggleTypes(el) {
 	$(el).siblings('.types').toggle();
 }
 
-// todo remove the exclusive feature
 $('.ui.accordion').accordion();

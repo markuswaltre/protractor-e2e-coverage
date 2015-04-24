@@ -12,8 +12,13 @@ body {
 	padding-top: 50px;
 }
 
-span.ui.mini.tag.label {
-  position: absolute;
-  margin-top: -20px;
-  right: 28px;
+.element-header {
+	cursor: pointer;
+}
+
+.ui.very.relaxed.horizontal.list .item:first-child {
+	width: 150px;
+}
+.ui.very.relaxed.horizontal.list .item {
+	width: 250px;
 }

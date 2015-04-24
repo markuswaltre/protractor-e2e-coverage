@@ -39,7 +39,6 @@
 			<h3>Coverage by element type</h3>
 			<div id="statistics_types" class="row"></div>
 
-
 			<h3>States</h3>
 			<div id="states" class="row"></div>
 
@@ -47,12 +46,6 @@
 
 
 	</div>
-
-	
-
-	<!-- <div id="types" style="display: none;"></div> -->
-	<!-- <div id="statistics"></div> -->
-	<!-- <div id="states" style="display: none;"></div> -->
 
 	<script type="text/template" id="template_statistics">
 		<div class="eight wide column">
@@ -69,7 +62,10 @@
 		</div>
 		<div class="eight wide column">
 			<div class="ui stacked center aligned segment">
-				<div class="ui statistic">
+				<div class="ui statistic
+						<% if(statistics.percentage < 25) print('red') %>
+						<% if(statistics.percentage > 25 && statistics.percentage < 75) print('orange') %>
+						<% if(statistics.percentage > 75) print('green') %>">
 					<div class="value">
 						<%- statistics.percentage %>%
 					</div>
@@ -82,12 +78,11 @@
 	</script>
 
 	<script type="text/template" id="template_statistics_types">
+
 		<div class="sixteen wide column">
 			<% _.each(types, function(type, index) { %>
-				<h5 class="ui attached header <% if(index == 0) print('top') %>">
-				  <%- type.type %>
-				</h5>
-				<div class="ui <% if(index == types.length - 1) print ('bottom') %> attached segment">
+				<div class="ui <% if(index == 0) print('top') %><% if(index == types.length - 1) print ('bottom') %> attached segment">
+					<%- type.type %>
 					Count: <%- type.count %>, 
 					Tested: <%- type.tested %>,
 					Percentage: <%- type.percentage %>%
@@ -118,39 +113,148 @@
 		<div class="sixteen wide column">
 			<div class="ui styled fluid accordion">
 				<% _.each(states, function(state) { %>
-				  <div class="title">
-						<h3>
+					<div class="title">
+						<h1>
 							<i class="dropdown icon"></i>
 							<%- state.url %><br>
-							Elements: <%- state.count.seen %>, 
-							Elements tested here: <%- state.count.tested %>, 
-							Elements tested global: <%- state.count.tested_global %> <br>
-							Percentage here: <%- state.percentage.here %>%, 
-							Percentage global: <%- state.percentage.global %>%
-						</h3>
-				  </div>
-				  <div class="content">
+						</h1>
+
+						<div class="ui two column grid">
+							<div class="column">
+								<div class="ui horizontal segment">
+									<div class="ui horizontal statistic">
+										<div class="value">
+											<%- state.count.seen %>
+										</div>
+										<div class="label">
+											Elements
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="column">
+								<div class="ui horizontal segment">
+									<div class="ui horizontal statistic">
+										<div class="value">
+											<%- state.percentage.here %>%
+										</div>
+										<div class="label">
+											Coverage
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content">
 						<div class="ui hidden divider"></div>
-						<h3>Statistics per type</h3>			
+						<h3>Coverage</h3>
+						<div class="ui two column grid">
+							<div class="column">
+								<div class="ui stacked segment">
+									<div class="ui top attached label">Here</div>
+
+									<div class="ui two column grid">
+										<div class="column">
+											<div class="ui basic horizontal segment">
+
+												<div class="ui statistic">
+													<div class="value">
+														<%- state.count.tested %>
+													</div>
+													<div class="label">
+														Elements tested
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="column">
+											<div class="ui basic horizontal segment">
+
+												<div class="ui statistic">
+													<div class="value">
+														<%- state.percentage.here %>%
+													</div>
+													<div class="label">
+														Percentage
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="column">
+								<div class="ui stacked segment">
+									<div class="ui top attached label">Global</div>
+									<div class="ui two column grid">
+											<div class="column">
+												<div class="ui basic horizontal segment">
+
+													<div class="ui statistic">
+														<div class="value">
+															<%- state.count.tested_global %>
+														</div>
+														<div class="label">
+															Elements tested
+														</div>
+													</div>
+
+												</div>
+											</div>
+											<div class="column">
+												<div class="ui basic horizontal segment">
+
+													<div class="ui statistic 
+															<% if(state.percentage.global < 25) print('red') %>
+															<% if(state.percentage.global > 25 && state.percentage.global < 75) print('orange') %>
+															<% if(state.percentage.global > 75) print('green') %>
+														">
+														<div class="value">
+															<%- state.percentage.global %>%
+														</div>
+														<div class="label">
+															Percentage
+														</div>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="ui hidden divider"></div>
+						<h3>Coverage per type</h3>			
 						<table class="ui table">
-						  <thead>
-						    <tr>
-						      <th>Type</th>
-						      <th>Count</th>
-						      <th>Visited here (%)</th>
-						      <th>Visited global (%)</th>
-						    </tr>
-						  </thead>
-						  <tbody>
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th>Count</th>
+									<th>Tested here</th>
+									<th>Coverage here</th>
+									<th>Tested global</th>
+									<th>Coverage global</th>
+								</tr>
+							</thead>
+							<tbody>
 								<% _.each(state.types, function(type) { %>
-									<tr>
+									<tr class="
+											<% if(type.percentage_global < 25) print('error') %>
+											<% if(type.percentage_global > 25 && type.percentage_global < 75) print('warning') %>
+											<% if(type.percentage_global > 75) print('positive') %>
+									">
 										<td><%- type.type %></td>
 										<td><%- type.seen %></td>
-										<td><%- type.here %> (<%- type.percentage_here %>%)</td>
-										<td><%- type.global %> (<%- type.percentage_global %>%)</td>
+										<td><%- type.here %></td>
+										<td><%- type.percentage_here %>%</td>
+										<td><%- type.global %></td>
+										<td><%- type.percentage_global %>%</td>
 									</tr>
 								<% }); %>
-						  </tbody>
+							</tbody>
 						</table>
 
 						<div class="ui hidden divider"></div>
@@ -158,66 +262,76 @@
 
 						<div class="ui divided very relaxed list">
 							<% _.each(state.elements, function(elem) { %>
-							  <div class="item">
+								<div class="item">
 									<% if(elem.tested) { %>
 										<i class="icon green checkmark"></i>
 									<% } else { %>
 										<i class="icon red remove"></i>
 									<% } %>
-							    <div class="content" onClick="toggleElement(this, '.segment')">
-							      <div class="header"><%- elem.type %></div>
-										Tested: <%- elem.tested %>,
-										Percentage here <strong><%- elem.percentage.here %></strong>%, 
-										Percentage global <strong><%- elem.percentage.global %></strong>%
-							    </div>
+									<div class="content element-header" onClick="toggleElement(this, '.segment')">
+										<div class="header"><%- elem.type %></div>
+
+										<div class="ui very relaxed horizontal list">
+											<div class="item">
+												Tested: <%- elem.tested %>
+											</div>
+											<div class="item">
+												Coverage here  <strong><%- elem.percentage.here %></strong>%
+											</div>
+											<div class="item">
+												Coverage global  <strong><%- elem.percentage.global %></strong>%
+											</div>
+										</div>
+
+									</div>
 									<div class="ui segment" style="display: none;">
 										<div class="ui top attached secondary segment">
 											<code><%- elem.element %></code>
 										</div>
 										<div class="ui bottom attached segment">
-								      <a class="ui label pointing right">Hash</a>
+											<a class="ui label pointing right">Hash</a>
 											<%- elem.hash %>
 										</div>
 
 										<h4>Events here</h4>
 
 										<div class="ui two column stackable grid segment">
-										  <div class="column">
-										  	<div class="ui top left attached label">Tested</div>
+											<div class="column">
+												<div class="ui top left attached label">Tested</div>
 												<% _.each(elem.events, function(event) { %>
-										    	<div class="ui green horizontal label"><%- event %></div>
+													<div class="ui green horizontal label"><%- event %></div>
 												<% }); %>
-										  </div>
-										  <div class="column">
-										  	<div class="ui top left attached label">Not tested</div>
+											</div>
+											<div class="column">
+												<div class="ui top left attached label">Not tested</div>
 												<% _.each(elem.eventsStats.unseen, function(event) { %>
-										    	<div class="ui red horizontal label"><%- event %></div>
+													<div class="ui red horizontal label"><%- event %></div>
 												<% }); %>
-										  </div>
+											</div>
 										</div>
 
 										<h4>Events global</h4>
 										<div class="ui two column stackable grid segment">
-										  <div class="column">
-										  	<div class="ui top left attached label">Tested</div>
+											<div class="column">
+												<div class="ui top left attached label">Tested</div>
 												<% _.each(elem.eventsStats.seen_global, function(event) { %>
-										    	<div class="ui green horizontal label"><%- event %></div>
+													<div class="ui green horizontal label"><%- event %></div>
 												<% }); %>
-										  </div>
-										  <div class="column">
-										  	<div class="ui top left attached label">Not tested</div>
+											</div>
+											<div class="column">
+												<div class="ui top left attached label">Not tested</div>
 												<% _.each(elem.eventsStats.unseen_global, function(event) { %>
-										    	<div class="ui red horizontal label"><%- event %></div>
+													<div class="ui red horizontal label"><%- event %></div>
 												<% }); %>
-										  </div>
+											</div>
 										</div>
 
 									</div>
-							  </div>
-						  <% }); %>
+								</div>
+							<% }); %>
 						</div>
-				  </div>
-			  <% }); %>
+					</div>
+				<% }); %>
 			</div>
 		</div>
 	</script>
