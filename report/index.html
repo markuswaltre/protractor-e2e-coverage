@@ -53,8 +53,8 @@
 		<div class="eight wide column">
 			<div class="ui stacked center aligned segment">
 				<div class="ui statistic
-						<% if(input.percentage < 25) print('red') %>
-						<% if(input.percentage > 25 && input.percentage < 75) print('orange') %>
+						<% if(input.percentage <= 25) print('red') %>
+						<% if(input.percentage > 25 && input.percentage <= 75) print('orange') %>
 						<% if(input.percentage > 75) print('green') %>">
 					<div class="value">
 						<%- input.percentage %>%
@@ -213,8 +213,8 @@
 												<div class="ui basic horizontal segment">
 
 													<div class="ui statistic 
-															<% if(state.percentage.global < 25) print('red') %>
-															<% if(state.percentage.global > 25 && state.percentage.global < 75) print('orange') %>
+															<% if(state.percentage.global <= 25) print('red') %>
+															<% if(state.percentage.global > 25 && state.percentage.global <= 75) print('orange') %>
 															<% if(state.percentage.global > 75) print('green') %>
 														">
 														<div class="value">
@@ -247,8 +247,8 @@
 							<tbody>
 								<% _.each(state.types, function(type) { %>
 									<tr class="
-											<% if(type.percentage_global < 25) print('error') %>
-											<% if(type.percentage_global > 25 && type.percentage_global < 75) print('warning') %>
+											<% if(type.percentage_global <= 25) print('error') %>
+											<% if(type.percentage_global > 25 && type.percentage_global <= 75) print('warning') %>
 											<% if(type.percentage_global > 75) print('positive') %>
 									">
 										<td><%- type.type %></td>
