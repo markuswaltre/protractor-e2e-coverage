@@ -3,7 +3,7 @@ var q = require('q'),
     fs = require('fs'),
     path = require('path'),
 		_ = require('underscore'),
-    ncp = require('ncp').ncp;
+    wrench = require('wrench');
 
 
 var CoveragePlugin = function() {
@@ -244,7 +244,7 @@ CoveragePlugin.prototype.outputResults = function(done) {
   fs.writeFileSync(outfileConfig, JSON.stringify(self.config.elements));
 
   // copy report folder
-  ncp(__dirname + '/report', self.outdir + '/report', done);
+  wrench.copyDirRecursive(__dirname + '/report', self.outdir + '/report', {forceDelete: true}, done);
 };
 
 CoveragePlugin.prototype.postResults = function(config) {
