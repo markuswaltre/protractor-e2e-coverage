@@ -87,6 +87,7 @@ CoveragePlugin.prototype.storeElement = function(element, type) {
     return {
       'hash': hash,
       'element': element.item,
+      'css': element.css,
       'type': type,
       'tested': false,
       'events': []
@@ -202,9 +203,12 @@ CoveragePlugin.prototype.postTest = function(config) {
           });
 
           // store eventlistener in sessionstorage
-          window.sessionStorage.setItem(hash, 'CoverageE2E');    
+          window.sessionStorage.setItem(hash, 'CoverageE2E');
 
-          DOMtype.elements.push({'item': item.outerHTML, 'location': url}); 
+          // get computedCss on element, doesnt look at nested    
+          var css = window.getComputedStyle(item).cssText;
+
+          DOMtype.elements.push({'item': item.outerHTML, 'css': css, 'location': url}); 
         }
       });
     });

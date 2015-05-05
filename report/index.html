@@ -42,10 +42,10 @@
 			<div class="ui stacked center aligned segment">
 				<div class="ui statistic">
 					<div class="value">
-						<%- input.count %> / <%- input.tested %>
+						<%- input.tested %> / <%- input.count %>
 					</div>
 					<div class="label">
-						Total elements / Tested
+						Tested / Total elements
 					</div>
 				</div>
 			</div>
@@ -72,42 +72,42 @@
 			<% _.each(input, function(type, index) { %>
 				<div class="ui <% if(index == 0) print('top') %><% if(index == input.length - 1) print ('bottom') %> attached segment">
 				<div class="ui three column grid">
-				  <div class="column">
-				    <div class="ui horizontal segment">
+					<div class="column">
+						<div class="ui horizontal segment">
 							<div class="ui mini horizontal statistic">
-							  <div class="value">
-							    <%- type.count %>
-							  </div>
-							  <div class="label">
-							    <span class="ui label"><%- type.type %></span>
-							  </div>
+								<div class="value">
+									<%- type.count %>
+								</div>
+								<div class="label">
+									<span class="ui label"><%- type.type %></span>
+								</div>
 							</div>
-				    </div>
-				  </div>
-				  <div class="column">
-				    <div class="ui horizontal segment">
-    					<div class="ui mini horizontal statistic">
-							  <div class="value">
-							    <%- type.tested %>
-							  </div>
-							  <div class="label">
-							    Tested
-							  </div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui horizontal segment">
+							<div class="ui mini horizontal statistic">
+								<div class="value">
+									<%- type.tested %>
+								</div>
+								<div class="label">
+									Tested
+								</div>
 							</div>
-				    </div>
-				  </div>
-				  <div class="column">
-				    <div class="ui horizontal segment">
-    					<div class="ui mini horizontal statistic">
-							  <div class="value">
-							    <%- type.percentage %>%
-							  </div>
-							  <div class="label">
-							    Coverage
-							  </div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="ui horizontal segment">
+							<div class="ui mini horizontal statistic">
+								<div class="value">
+									<%- type.percentage %>%
+								</div>
+								<div class="label">
+									Coverage
+								</div>
 							</div>
-				    </div>
-				  </div>
+						</div>
+					</div>
 				</div>
 				</div>
 			<% }); %>
@@ -292,12 +292,17 @@
 
 									</div>
 									<div class="ui segment tertiary" style="display: none;">
-										<div class="ui top attached secondary segment">
-											<code><%- elem.element %></code>
-										</div>
-										<div class="ui bottom attached segment">
+										<div class="ui top attached segment">
+											<h4>Element</h4>
 											<a class="ui label pointing right">Hash</a>
 											<%- elem.hash %>
+
+											<div class="ui secondary segment">
+												<%= elem.visualElement %>
+											</div>
+										</div>
+										<div class="ui bottom attached secondary segment">
+											<code><%- elem.element %></code>
 										</div>
 
 										<h4>Events here</h4>

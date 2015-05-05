@@ -50,6 +50,8 @@ function rebuildData() {
 		state.elements.forEach(function(elem) {
 			var globalEvents = [];
 
+			elem.visualElement = addCss(elem.element, elem.css);
+
 			if(elem.tested) {
 				tested+=1
 			};
@@ -120,6 +122,13 @@ function rebuildData() {
 
 		state.types = types;
 	});
+
+	function addCss(elem, css) {
+		var before = elem.substr(0,elem.indexOf(' '));
+		var after = elem.substr(elem.indexOf(' ') + 1);
+
+		return before + ' style="' + css + '" ' + after; 
+	}
 
 	function findEvents(type, events) {
 		var configType = _.findWhere(config, {'type': type});
