@@ -9,7 +9,7 @@ in your protractor conf file add this:
 ```javascript
   plugins: [
     {
-      path: '../node_modules/protractor-e2e-coverage/index.js',
+      package: 'protractor-e2e-coverage',
       outdir: 'test/coverage'
     }
   ],
@@ -21,7 +21,7 @@ it's possible to set this up with the following command
 ```javascript
   plugins: [
 	{
-      elements: [ 
+      elements: [
       	// add one for each DOM type
         {
           'type': 'button',

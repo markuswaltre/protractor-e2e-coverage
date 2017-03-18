@@ -13,6 +13,7 @@ var CoveragePlugin = function() {
 	this.name = 'CoverageE2E';
 	this.outdir;
   this.config = {
+    outdir: './',
     elements: [
       {
         'type': 'button',
@@ -58,7 +59,7 @@ CoveragePlugin.prototype.hash = function(elem) {
 }
 
 CoveragePlugin.prototype.updateElement = function(event, obj, url) {
-	var self = this;	
+	var self = this;
 
 	var hash = self.hash(obj);
 
@@ -101,14 +102,14 @@ CoveragePlugin.prototype.storeElement = function(element, type) {
       'elements': [buildElement()]
     }
     self.DOMelements.push(urlObj);
-  } 
+  }
   // if the item on the location hasn't been seen
   else if(_.findIndex(self.DOMelements[index].elements, {'hash': hash}) === -1) {
       self.DOMelements[index].elements.push(buildElement());
   }
 }
 
-CoveragePlugin.prototype.parseLogs = function(config) {
+CoveragePlugin.prototype.parseLogs = function() {
 	var self = this;
 
 	if(this.browserLogAvailable) {
@@ -119,7 +120,7 @@ CoveragePlugin.prototype.parseLogs = function(config) {
 
 	    warnings.forEach(function(elem) {
 	      var m = JSON.parse(elem.message);
-	      if (m.message.hasOwnProperty('parameters')) { 
+	      if (m.message.hasOwnProperty('parameters')) {
 
 	        var p = m.message.parameters;
 
@@ -132,7 +133,7 @@ CoveragePlugin.prototype.parseLogs = function(config) {
 	}
 };
 
-CoveragePlugin.prototype.saveLogs = function(config) {
+CoveragePlugin.prototype.saveLogs = function() {
 	var self = this;
 
   if(this.browserLogAvailable) {
@@ -142,20 +143,16 @@ CoveragePlugin.prototype.saveLogs = function(config) {
   }
 };
 
-CoveragePlugin.prototype.setup = function(config) {
+CoveragePlugin.prototype.setup = function() {
 	var self = this;
-	self.outdir = path.resolve(process.cwd(), config.outdir);
-
-  if(config.elements) {
-    self.config.elements = config.elements;
-  }
+	self.config.outdir = path.resolve(process.cwd(), self.config.outdir);
 
   browser.manage().logs().getAvailableLogTypes().then(function(res) {
     self.browserLogAvailable = res.indexOf('browser') > -1;
   });
 };
 
-CoveragePlugin.prototype.postTest = function(config) {
+CoveragePlugin.prototype.postTest = function() {
 	var self = this;
 	var deferred = q.defer();
 
@@ -175,14 +172,14 @@ CoveragePlugin.prototype.postTest = function(config) {
         // return NodeList
         var arr_nodes = document.querySelectorAll(type);
         // convert to array
-        return Array.prototype.slice.call(arr_nodes);  
+        return Array.prototype.slice.call(arr_nodes);
       }
     }
 
     // Elements and events we want to investigate
     var DOMcomponents = arguments[0];
 
-    var url = window.location.pathname;  
+    var url = window.location.pathname;
 
     DOMcomponents.forEach(function(DOMtype) {
       var DOMitems = helper.getNodes(DOMtype.type);
@@ -199,16 +196,16 @@ CoveragePlugin.prototype.postTest = function(config) {
             item.addEventListener(event, function() {
               // needs to be info to be catched by the browserlogs capture
               console.info('CoverageE2E', event, item.outerHTML, window.location.pathname);
-            }); 
+            });
           });
 
           // store eventlistener in sessionstorage
           window.sessionStorage.setItem(hash, 'CoverageE2E');
 
-          // get computedCss on element, doesnt look at nested    
+          // get computedCss on element, doesnt look at nested
           var css = window.getComputedStyle(item).cssText;
 
-          DOMtype.elements.push({'item': item.outerHTML, 'css': css, 'location': url}); 
+          DOMtype.elements.push({'item': item.outerHTML, 'css': css, 'location': url});
         }
       });
     });
