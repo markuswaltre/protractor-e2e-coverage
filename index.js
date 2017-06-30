@@ -142,9 +142,9 @@ CoveragePlugin.prototype.saveLogs = function(config) {
   }
 };
 
-CoveragePlugin.prototype.setup = function(config) {
-	var self = this;
-	self.outdir = path.resolve(process.cwd(), config.outdir);
+CoveragePlugin.prototype.setup = function(config = {outdir: 'reports/coverage') {
+  var self = this;
+  self.outdir = path.resolve(process.cwd(), config.outdir);
 
   if(config.elements) {
     self.config.elements = config.elements;
